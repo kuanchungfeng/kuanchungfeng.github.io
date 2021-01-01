@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>Asciidoc Post | My New Hugo Site</title>
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="description" content="測試Asciidoc更新到github
+ 資料夾結構  archetype
+  like a meta-data，產生預設的frontMatter
+     content
+  基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。
+  假如你要寫一個網頁，html檔也放在這裡面。
+     data
+  就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。
+     layouts
+  放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板
+     static
+  放image，css，js檔等等不會改變的檔案。
+     theme
+  可以使用別人寫好的樣板(主題)，去 官網主題 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。
+     config.toml">
+    <meta name="generator" content="Hugo 0.79.0" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+      <link href="/dist/css/app.4fc0b62e4b82c997bb0041217cd6b979.css" rel="stylesheet">
+    
+
+    
+
+    
+      
+
+    
+
+    
+    
+    <meta property="og:title" content="Asciidoc Post" />
+<meta property="og:description" content="測試Asciidoc更新到github
+ 資料夾結構  archetype
+  like a meta-data，產生預設的frontMatter
+     content
+  基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。
+  假如你要寫一個網頁，html檔也放在這裡面。
+     data
+  就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。
+     layouts
+  放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板
+     static
+  放image，css，js檔等等不會改變的檔案。
+     theme
+  可以使用別人寫好的樣板(主題)，去 官網主題 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。
+     config.toml" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kuanchungfeng.github.io/posts/asciidoc-post/" />
+<meta property="article:published_time" content="2021-01-01T10:28:16+08:00" />
+<meta property="article:modified_time" content="2021-01-01T10:28:16+08:00" />
+<meta itemprop="name" content="Asciidoc Post">
+<meta itemprop="description" content="測試Asciidoc更新到github
+ 資料夾結構  archetype
+  like a meta-data，產生預設的frontMatter
+     content
+  基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。
+  假如你要寫一個網頁，html檔也放在這裡面。
+     data
+  就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。
+     layouts
+  放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板
+     static
+  放image，css，js檔等等不會改變的檔案。
+     theme
+  可以使用別人寫好的樣板(主題)，去 官網主題 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。
+     config.toml">
+<meta itemprop="datePublished" content="2021-01-01T10:28:16+08:00" />
+<meta itemprop="dateModified" content="2021-01-01T10:28:16+08:00" />
+<meta itemprop="wordCount" content="480">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Asciidoc Post"/>
+<meta name="twitter:description" content="測試Asciidoc更新到github
+ 資料夾結構  archetype
+  like a meta-data，產生預設的frontMatter
+     content
+  基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。
+  假如你要寫一個網頁，html檔也放在這裡面。
+     data
+  就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。
+     layouts
+  放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板
+     static
+  放image，css，js檔等等不會改變的檔案。
+     theme
+  可以使用別人寫好的樣板(主題)，去 官網主題 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。
+     config.toml"/>
+
+	
+  </head>
+
+  <body class="ma0 avenir bg-near-white">
+
+    
+   
+  
+
+  <header>
+    <div class="bg-black">
+      <nav class="pv3 ph3 ph4-ns" role="navigation">
+  <div class="flex-l justify-between items-center center">
+    <a href="/" class="f3 fw2 hover-white no-underline white-90 dib">
+      
+        My New Hugo Site
+      
+    </a>
+    <div class="flex-l items-center">
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</nav>
+
+    </div>
+  </header>
+
+
+
+    <main class="pb7" role="main">
+      
+  
+  <article class="flex-l flex-wrap justify-between mw8 center ph3">
+    <header class="mt4 w-100">
+      <aside class="instapaper_ignoref b helvetica tracked">
+          
+        POSTS
+      </aside>
+      
+
+
+
+
+  <div id="sharing" class="mt3">
+
+    
+    <a href="https://www.facebook.com/sharer.php?u=https://kuanchungfeng.github.io/posts/asciidoc-post/" class="facebook no-underline" aria-label="share on Facebook">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M28.765,50.32h6.744V33.998h4.499l0.596-5.624h-5.095  l0.007-2.816c0-1.466,0.14-2.253,2.244-2.253h2.812V17.68h-4.5c-5.405,0-7.307,2.729-7.307,7.317v3.377h-3.369v5.625h3.369V50.32z   M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;"/></svg>
+
+    </a>
+
+    
+    
+    <a href="https://twitter.com/share?url=https://kuanchungfeng.github.io/posts/asciidoc-post/&amp;text=Asciidoc%20Post" class="twitter no-underline" aria-label="share on Twitter">
+      <svg height="32px"  style="enable-background:new 0 0 67 67;" version="1.1" viewBox="0 0 67 67" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><path d="M37.167,22.283c-2.619,0.953-4.274,3.411-4.086,6.101  l0.063,1.038l-1.048-0.127c-3.813-0.487-7.145-2.139-9.974-4.915l-1.383-1.377l-0.356,1.017c-0.754,2.267-0.272,4.661,1.299,6.271  c0.838,0.89,0.649,1.017-0.796,0.487c-0.503-0.169-0.943-0.296-0.985-0.233c-0.146,0.149,0.356,2.076,0.754,2.839  c0.545,1.06,1.655,2.097,2.871,2.712l1.027,0.487l-1.215,0.021c-1.173,0-1.215,0.021-1.089,0.467  c0.419,1.377,2.074,2.839,3.918,3.475l1.299,0.444l-1.131,0.678c-1.676,0.976-3.646,1.526-5.616,1.568  C19.775,43.256,19,43.341,19,43.405c0,0.211,2.557,1.397,4.044,1.864c4.463,1.377,9.765,0.783,13.746-1.568  c2.829-1.673,5.657-5,6.978-8.221c0.713-1.716,1.425-4.851,1.425-6.354c0-0.975,0.063-1.102,1.236-2.267  c0.692-0.678,1.341-1.419,1.467-1.631c0.21-0.403,0.188-0.403-0.88-0.043c-1.781,0.636-2.033,0.551-1.152-0.402  c0.649-0.678,1.425-1.907,1.425-2.267c0-0.063-0.314,0.042-0.671,0.233c-0.377,0.212-1.215,0.53-1.844,0.72l-1.131,0.361l-1.027-0.7  c-0.566-0.381-1.361-0.805-1.781-0.932C39.766,21.902,38.131,21.944,37.167,22.283z M33,64C16.432,64,3,50.569,3,34S16.432,4,33,4  s30,13.431,30,30S49.568,64,33,64z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/></svg>
+
+    </a>
+
+    
+    <a href="https://www.linkedin.com/shareArticle?mini=true&amp;url=https://kuanchungfeng.github.io/posts/asciidoc-post/&amp;title=Asciidoc%20Post" class="linkedin no-underline" aria-label="share on LinkedIn">
+      <svg  height="32px"  style="enable-background:new 0 0 65 65;" version="1.1" viewBox="0 0 65 65" width="32px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M50.837,48.137V36.425c0-6.275-3.35-9.195-7.816-9.195  c-3.604,0-5.219,1.983-6.119,3.374V27.71h-6.79c0.09,1.917,0,20.427,0,20.427h6.79V36.729c0-0.609,0.044-1.219,0.224-1.655  c0.49-1.22,1.607-2.483,3.482-2.483c2.458,0,3.44,1.873,3.44,4.618v10.929H50.837z M22.959,24.922c2.367,0,3.842-1.57,3.842-3.531  c-0.044-2.003-1.475-3.528-3.797-3.528s-3.841,1.524-3.841,3.528c0,1.961,1.474,3.531,3.753,3.531H22.959z M34,64  C17.432,64,4,50.568,4,34C4,17.431,17.432,4,34,4s30,13.431,30,30C64,50.568,50.568,64,34,64z M26.354,48.137V27.71h-6.789v20.427  H26.354z" style="fill-rule:evenodd;clip-rule:evenodd;fill:;"/>
+</svg>
+
+    </a>
+  </div>
+
+
+      <h1 class="f1 athelas mt3 mb1">Asciidoc Post</h1>
+      
+      
+      <time class="f6 mv4 dib tracked" datetime="2021-01-01T10:28:16+08:00">January 1, 2021</time>
+
+      
+      
+    </header>
+    <div class="nested-copy-line-height lh-copy serif f4 nested-links nested-img mid-gray pr4-l w-two-thirds-l"><div class="paragraph">
+<p>測試Asciidoc更新到github</p>
+</div>
+<div class="sect1">
+<h2 id="_資料夾結構">資料夾結構</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>archetype</p>
+<div class="ulist">
+<ul>
+<li>
+<p>like a meta-data，產生預設的frontMatter</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>content</p>
+<div class="ulist">
+<ul>
+<li>
+<p>基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。</p>
+</li>
+<li>
+<p>假如你要寫一個網頁，html檔也放在這裡面。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>data</p>
+<div class="ulist">
+<ul>
+<li>
+<p>就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>layouts</p>
+<div class="ulist">
+<ul>
+<li>
+<p>放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>static</p>
+<div class="ulist">
+<ul>
+<li>
+<p>放image，css，js檔等等不會改變的檔案。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>theme</p>
+<div class="ulist">
+<ul>
+<li>
+<p>可以使用別人寫好的樣板(主題)，去 <a href="https://themes.gohugo.io/">官網主題</a> 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。</p>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>config.toml</p>
+<div class="ulist">
+<ul>
+<li>
+<p>像是yaml檔，設定你網頁的參數</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+不一定每個資料夾都會用到，有可能你只使用theme 跟 content 來完成簡單的blog
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_content">Content</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Hugo 分成兩種頁面跟一種特殊的頁面：</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>List Page</p>
+</li>
+<li>
+<p>Single Page</p>
+</li>
+<li>
+<p>_index.md</p>
+<div class="ulist">
+<ul>
+<li>
+<p>hugo 只會自動產生第一層的資料夾，不會產生第二層以下的資料夾</p>
+</li>
+<li>
+<p>如果要產生第二層以下的資料夾頁，可以加上_index.md到該層資料夾</p>
+</li>
+<li>
+<p>_index.md 可以用來控制及增加一些特定的內容於List Page 之頂端的頁面。</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_frontmatter">frontMatter</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>frontMatter是content裡面每篇內文的meta-data</p>
+</li>
+<li>
+<p>格式可以為yaml,toml,json</p>
+</li>
+<li>
+<p>預設格式為 yaml</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>yaml 用 三條 - 隔開，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>---
+title: &#34;A&#34;
+date: 2020-11-30T16:32:47+08:00
+draft: true
+---</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>toml 用 三個 + 隔開，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>+++
+title =  &#34;A&#34;
+date =  2020-11-30T16:32:47+08:00
+draft =  true
++++</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>frontMatter 可以讓你輕鬆展示檔案的名字、日期等檔案資訊。</p>
+</li>
+<li>
+<p>可以自己客製你想要的forntMatter ，例如：</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>---
+title: &#34;A&#34;
+date: 2020-11-30T16:32:47+08:00
+draft: true
+Author: &#34;Arthur&#34;
+---</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>利用frontMatter管理你的template，你可以想像成用不同標籤分類你的檔案，再用Hugo去做不同標籤相對應的排版。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_archetypes">Archetypes</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>用來設定預設的frontMatter，寫在default.md裡。</p>
+</li>
+<li>
+<p>如果想要某個資料夾的預設檔案為別的frontMatter，就建立一個資料夾名.md，將預設frontMatter寫在裡面。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_shortcodes">Shortcodes</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>為了簡化網址，讓撰寫的文章更簡潔</p>
+</li>
+<li>
+<p>shortcodes 格式</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre></pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>shortcodes 範例</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+
+<div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+  <iframe src="https://www.youtube.com/embed/XXX" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border:0;" allowfullscreen title="YouTube Video"></iframe>
+</div>
+
+</div>
+<div class="paragraph">
+<p>XXX 為 youtube id</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_taxonomies">Taxonomies</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>分類你的分頁，使用標籤或分類，預設有 tags 跟 categories</p>
+</li>
+<li>
+<p>放在formatMatter裡面，讓Hugo幫你分類</p>
+</li>
+<li>
+<p>taxonomy範例</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>tags: [&#34;tag1&#34;,&#34;tag2&#34;,&#34;tag3&#34;]
+categories: [&#34;cat1&#34;]</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>客製化Taxonomies</p>
+<div class="ulist">
+<ul>
+<li>
+<p>在config.toml加上</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>[taxonomies]
+    tag = &#34;tags&#34;
+    category = &#34;categories&#34;
+    mood = &#34;moods&#34;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>前面單數，後面複數</p>
+</div>
+<div class="admonitionblock important">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Important</div>
+</td>
+<td class="content">
+如果要客製化Taxonomies，要加上 tag 跟 category，否則預設的Taxonomies 會失效。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_template_basics">Template Basics</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>hugo是由list page 跟 single page 組成，所以基本的樣式就是在layouts資料夾底下有
+個_default資料夾，裡面有list.html 跟 single.html。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_list_page_template">List Page Template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>建立list page template步驟</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>建立一個_default資料夾，並且在裡面新增一個list.html</p>
+</li>
+<li>
+<p>加上html 跟 hugo 變數</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{.Content}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>這變數讓每個list page 顯示 _index.md的內容</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ range .Pages}}
+    &lt;ul&gt;
+       &lt;li&gt;
+         &lt;a href=&#34;{{.RelPermalink}}&#34;&gt;{{.Title}}&lt;/a&gt;
+       &lt;/li&gt;
+     &lt;/ul&gt;
+{{ end }}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>Hugo的 forEach</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_single_page_template">Single Page Template</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>建立Single page template步驟</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>建立一個_default資料夾，並且在裡面新增一個single.html</p>
+</li>
+<li>
+<p>加上html 跟 hugo變數</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  &lt;h1&gt;Header&lt;/h1&gt;
+  &lt;hr&gt;
+  &lt;h3&gt;{{.Title}}&lt;/h3&gt;
+  &lt;h4&gt;{{.Date}}&lt;/h4&gt;
+  {{.Content}}
+  &lt;hr&gt;
+  &lt;h2&gt;Footer&lt;/h2&gt;</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>這變數讓每個single page 顯示 每個single page的內容</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_home_page_templates">Home Page Templates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>建立Single page template步驟</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在layouts新增一個index.html</p>
+</li>
+<li>
+<p>加上html 跟 hugo變數</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_section_templates">Section Templates</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>建立部分的template</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在layouts新增跟你content裡面的資料夾名稱一樣的資料夾</p>
+</li>
+<li>
+<p>依照需求增加 list.html 或 single.html</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_base_templates_blocks">Base Templates &amp; Blocks</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>重複的程式碼一直是不好的寫法，可以用建立一個共同的模板，例如&lt;header&gt;。</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>在_default 資料夾裡面新增一個 baseof.html</p>
+</li>
+<li>
+<p>在baseof.html 裡面使用block，例如：</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;html&gt;
+&lt;head&gt;
+     &lt;meta charset=&#34;UTF-8&#34;&gt;
+
+     &lt;title&gt;Document&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    {{ block &#34;main&#34; .}}
+
+    {{end}}
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>到list.html(或是其他樣板裡面)使用剛剛建立的block，例如：</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ define &#34;main&#34;}}
+    This is the list template
+{{end}}</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>block的好處是可以彈性決定要不要繼承，也就是說你在baseof.html開一個block，裡面打了一串html，如果你list.html有define 剛剛的block，你就可以複寫，如果沒有define，就是用baseof.html 本來的block的內容。</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables">Variables</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Hugo的變數有很多，可參考
+<a href="https://gohugo.io/variables">Hugo變數文件</a>。</p>
+</li>
+<li>
+<p>變數用 {{  }} 包起來。</p>
+</li>
+<li>
+<p>以single page來說，可以用{{ .Title }}、{{ .Date }}、{{ .URL }}來顯示每頁的資料。</p>
+</li>
+<li>
+<p>如果要抓客製化的frontMatter , 就用{{ .Params.XXX}} (XXX為frontMatter設置的變數)</p>
+</li>
+<li>
+<p>變數也可以單獨宣告，只要使用$開頭，加上變數名。可以宣告的型態有字串、數字、布林值。例如：</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ $varName := &#34;test&#34;}}
+{{ $varBoolean := true}}
+{{ $varInt := 3 }}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>此時只要在下方使用
+{{ $varName }}，頁面就會顯示 test。</p>
+</div>
+<div class="admonitionblock note">
+<table>
+<tbody><tr>
+<td class="icon">
+<div class="title">Note</div>
+</td>
+<td class="content">
+變數可以應用的範圍很多，例如用變數去顯示不同的顏色、字體大小等CSS排版，或是用變數顯示不同的內容、做計算等等。
+</td>
+</tr>
+</tbody></table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_functions">Functions</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Functions 函數，可參考
+<a href="https://gohugo.io/variables/">Hugo函數文件</a></p>
+</li>
+<li>
+<p>Functions只能用在layouts資料夾，不能用在contents資料夾。</p>
+</li>
+<li>
+<p>Functions 格式為 {{ function param1 param2 }}，例如：</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ truncate 10 &#34;這是一篇關於你與我的文章&#34;}} //<b class="conum">(1)</b>
+{{ add 1 5 }} //<b class="conum">(2)</b>
+{{ sub 1 5}} //<b class="conum">(3)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>truncate 取前10個字，後面…​代替，適合用在list.html。的一部分內容</p>
+</li>
+<li>
+<p>add 加法的函數使用方式</p>
+</li>
+<li>
+<p>sub 減法的函數</p>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>list.html很常用的一個函數為range，它屬於一種迴圈函數。</p>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ range .Pages }} //<b class="conum">(1)</b>
+
+
+{{ end }} <b class="conum">(2)</b></pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>.Pages表示抓到所有內容</p>
+</li>
+<li>
+<p>記得用end把迴圈包起來</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_if_statements">If Statements</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>判斷式規則：{{ if operator param1 param2}}</p>
+</div>
+<div class="paragraph">
+<p>operator 有</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>eq</p>
+</li>
+<li>
+<p>lt(less than)</p>
+</li>
+<li>
+<p>le(less than and equal to)</p>
+</li>
+<li>
+<p>gt(greater than)</p>
+</li>
+<li>
+<p>ge(greater than equal to)</p>
+</li>
+<li>
+<p>not</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  {{ $var1 := 1}}
+  {{ $var2 := 2}}
+  {{ if eq $var1 $var2}}
+    true
+  {{else}}
+    false
+  {{end}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果要用not，記得將條件包在()裡面，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  {{ $var1 := 1}}
+  {{ $var2 := 2}}
+  {{ if not (eq $var1 $var2) }}
+    true
+  {{else}}
+    false
+  {{end}}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>如果要兩個條去做and 或 or ，格式為{{ if and (cond1) (cond2) }}，例如：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>  {{ if and (lt $var1 $var2) (gt $var2 $var1) }} //<b class="conum">(1)</b>
+    true
+  {{else}}
+    false
+  {{end}}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>lt $var1 $var2 為 $var1 less than $var2</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>if 的應用：可以依照現在在哪一頁的標籤做不同的CSS，範例：</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ $curTitle := .Title }} /<b class="conum">(1)</b>
+{{ range .Site.Pages }} /<b class="conum">(2)</b>
+  &lt;li&gt;
+      &lt;a href=&#34;{{.URL}}&#34;
+      style=&#34;
+      {{if eq $curTitle .Title }} background-color: yellow;
+      {{end}}
+      &#34;&gt; {{.Title}}&lt;/a&gt;
+  &lt;/li&gt;
+{{end}}</pre>
+</div>
+</div>
+<div class="colist arabic">
+<ol>
+<li>
+<p>為了區分該頁是哪頁所存的變數</p>
+</li>
+<li>
+<p>在網站的每一頁(開始跑回圈)</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_data_files">Data Files</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>雖然靜態網站不適合連DB，但你可以用一些格式儲存資料，如json，yaml，toml等等。</p>
+</li>
+<li>
+<p>將儲存好的資料放在data 資料夾做使用，假如檔名為test.json，這時只要用</p>
+</li>
+</ul>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>{{ range Site.Data.test }}
+
+{{ end }}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>就可以跑全部的json資訊了</p>
+</div>
+</div>
+</div>
+<ul class="pa0">
+  
+</ul>
+<div class="mt6 instapaper_ignoref">
+      
+      
+      </div>
+    </div>
+
+    <aside class="w-30-l mt6-l">
+
+
+
+
+</aside>
+
+  </article>
+
+    </main>
+    <footer class="bg-black bottom-0 w-100 pa3" role="contentinfo">
+  <div class="flex justify-between">
+  <a class="f4 fw4 hover-white no-underline white-70 dn dib-ns pv2 ph3" href="https://kuanchungfeng.github.io/" >
+    &copy;  My New Hugo Site 2021 
+  </a>
+    <div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+  </div>
+</footer>
+
+    
+
+  <script src="/dist/js/app.3fc0f988d21662902933.js"></script>
+
+
+  </body>
+</html>
