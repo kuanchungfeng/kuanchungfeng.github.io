@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">認識設計模式，提升你程式的可利用性 - Arthur&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="認識設計模式，提升你程式的可利用性" />
+<meta property="og:description" content="設計模式是什麼? 設計模式(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/design-pattern-guide/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-06T23:29:10+08:00" />
+<meta property="article:modified_time" content="2021-09-06T23:29:10+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="認識設計模式，提升你程式的可利用性"/>
+<meta name="twitter:description" content="設計模式是什麼? 設計模式(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計"/>
+<meta name="application-name" content="Arthur&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Arthur&#39;s Blog">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="http://example.org/posts/design-pattern-guide/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "認識設計模式，提升你程式的可利用性",
+        "inLanguage": "zh-TW",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "http:\/\/example.org\/posts\/design-pattern-guide\/"
+        },"genre": "posts","keywords": "DP","wordcount":  1616 ,
+        "url": "http:\/\/example.org\/posts\/design-pattern-guide\/","datePublished": "2021-09-06T23:29:10+08:00","dateModified": "2021-09-06T23:29:10+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title"></h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">認識設計模式，提升你程式的可利用性</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><i class="author fas fa-user-circle fa-fw"></i><a href="/" title="Author" rel=" author" class="author"></a>
+                </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-06">2021-09-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-06">2021-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span></span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents"></nav></div>
+            </div><div class="content" id="content"><div class="sect1">
+<h2 id="_設計模式是什麼">設計模式是什麼?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>設計模式</strong>(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計經驗總結。</p>
+</div>
+<div class="paragraph">
+<p>設計模式一開始是出現在建築學中，1977年，克里斯托佛·亞歷山大 (Christopher Alexander)於他的著作《建築模式語言：城鎮、建築、構造（A Pattern Language: Towns Building Construction）》提出此改念。</p>
+</div>
+<div class="sect2">
+<h3 id="_gang_of_fourgof">Gang of Four(GoF)</h3>
+<div class="paragraph">
+<p>1995年，埃里希·伽瑪（Erich Gamma）、理査德·海爾姆（Richard Helm）、拉爾夫·約翰森（Ralph Johnson）、約翰·威利斯迪斯（John Vlissides）等四位作者合作出版了《設計模式：可複用面向對象軟件的基礎》（Design Patterns: Elements of Reusable Object-Oriented Software）一書，四位作者後來被稱為GoF(Gang of Four)，四人幫在書中收錄了<strong>23</strong>個設計模式，被稱為 GoF 設計模式。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/GoF.png" alt="GoF"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_設計模式的優點">設計模式的優點</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>熟悉設計模式讓你更快速了解框架的程式碼</p>
+</li>
+<li>
+<p>提升程式的可再利用性、可擴展性及可維護性</p>
+</li>
+<li>
+<p>使你與其他工程師更容易得討論抽象層級的觀念</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_何時不該使用設計模式">何時不該使用設計模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>如果你的需求很簡單，簡單的演算法就可以完成，不要使用設計模式讓你的程式碼複雜度提高。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_設計模式的分類">設計模式的分類</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_目的">目的</h3>
+<div class="paragraph">
+<p>設計模式依照<strong>目的</strong>(模式的用途)，可分成</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>生成模式(creational)：物件的生成程序</p>
+</li>
+<li>
+<p>結構模式(structural)：處理類別或物件的合成</p>
+</li>
+<li>
+<p>行為模式(behavioral)：類別或物件的互動方式及責任分配</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/design-pattern.png" alt="design-pattern-mind-map"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_範疇">範疇</h3>
+<div class="paragraph">
+<p>設計模式還可以依照<strong>範疇</strong>，說明此模式主要是用在<strong>類別</strong>(class)還是<strong>物件</strong>(object)身上。</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">設計模式一覽表</caption>
+<colgroup>
+<col style="width: 14.2857%;"/>
+<col style="width: 28.5714%;"/>
+<col style="width: 28.5714%;"/>
+<col style="width: 28.5715%;"/>
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-center valign-top"></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>生成模式</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>結構模式</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>行為模式</strong></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>類別</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Factory Method</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Adapter</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>Interpreter</em></p>
+<p class="tableblock"><em>Template Method</em></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>物件</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>Abstract Factory</em></p>
+<p class="tableblock"><em>Builder</em></p>
+<p class="tableblock"><em>Prototype</em></p>
+<p class="tableblock"><em>Singleton</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>Adapter</em></p>
+<p class="tableblock"><em>Bridge</em></p>
+<p class="tableblock"><em>Composite</em></p>
+<p class="tableblock"><em>Decorator</em></p>
+<p class="tableblock"><em>Facade</em></p>
+<p class="tableblock"><em>Flyweight</em></p>
+<p class="tableblock"><em>Proxy</em></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><em>Chain of Responsibility</em></p>
+<p class="tableblock"><em>Command</em></p>
+<p class="tableblock"><em>Iterator</em></p>
+<p class="tableblock"><em>Mediator</em></p>
+<p class="tableblock"><em>Memento</em></p>
+<p class="tableblock"><em>Observer</em></p>
+<p class="tableblock"><em>State</em></p>
+<p class="tableblock"><em>Strategy</em></p>
+<p class="tableblock"><em>Visitor</em></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_一口氣看完23個設計模式">一口氣看完23個設計模式</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_abstract_factory">Abstract Factory</h3>
+<div class="paragraph">
+<p>以同一個介面來建立一整族相關或相依的物件，不需點明各物件真正所屬的具象類別。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_adapter">Adapter</h3>
+<div class="paragraph">
+<p>將類別的介面轉換成外界所預期的另一種介面，讓原先無法相容的兩個介面能夠兜在一起使用。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_bridge">Bridge</h3>
+<div class="paragraph">
+<p>將實作體系與抽象體系分離開來，讓兩者能各自更動，各自前進。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_builder">Builder</h3>
+<div class="paragraph">
+<p>從複雜物件的佈局中抽取出生成程序，以便用同一個生成程序製造各種不同的物件佈局。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_chain_of_responsibility">Chain of Responsibility</h3>
+<div class="paragraph">
+<p>讓多個物件都有機會處理某一訊息，以降低訊息發送者和接受者之間的耦合關係。將接受者物件串聯起來，讓訊息流經其中，直到被處理為止。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_command">Command</h3>
+<div class="paragraph">
+<p>將訊息封裝成物件，以便能用各種不同訊息、紀錄、復原等方式加以參數化管理。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_composite">Composite</h3>
+<div class="paragraph">
+<p>將物件組織成樹狀結構、「部分－全體」層級關係，讓外界以一致性的方式對待各別物件和整體物件</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_decorator">Decorator</h3>
+<div class="paragraph">
+<p>將額外權責動態附加於物件身上，不必衍生子類別即可彈性擴增功能。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_facade">Facade</h3>
+<div class="paragraph">
+<p>替子系統裡的一堆介面定義一套統一的高階介面，讓子系統更容易使用。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_factory_method">Factory Method</h3>
+<div class="paragraph">
+<p>定義可生成物件的介面，但讓子類別去決定該實體化哪一種類別的物件。此模式讓類別將實體化程序交給子類別去處置。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_flyweight">Flyweight</h3>
+<div class="paragraph">
+<p>以共享機制有效地支援一大堆小規模的物件</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_interpreter">Interpreter</h3>
+<div class="paragraph">
+<p>針對標的語言定義出文法，以及可解讀這種文法的解譯器。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_iterator">Iterator</h3>
+<div class="paragraph">
+<p>不須知曉聚合物建的內部細節，即可依序存取內含的每一個元素。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_mediator">Mediator</h3>
+<div class="paragraph">
+<p>定義可將一群物件互動方式封裝起來的物件。因為物件彼此不直接相互干涉，所以耦合性低，容易逐一變更互動關係。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_memento">Memento</h3>
+<div class="paragraph">
+<p>在不違反封裝性的前提下，捕捉物件的內部狀態並存在外面，以便日後回復至此一狀態。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_observer">Observer</h3>
+<div class="paragraph">
+<p>定義一對多的物件依存關係，讓物件狀態一有變動，就自動通知其他相依物件，執行更新動作。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_prototype">Prototype</h3>
+<div class="paragraph">
+<p>制定可用原型個體生成的物件類型，爾後只需複製此原型即可生成物件。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_proxy">Proxy</h3>
+<div class="paragraph">
+<p>替其他物件預留代理者空位，藉此控制存取其他物件。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_singleton">Singleton</h3>
+<div class="paragraph">
+<p>確保類別只會有一個物件實體存在，並提供單一存取窗口</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_state">State</h3>
+<div class="paragraph">
+<p>讓物件的外顯行為隨內部狀態的改變而改變，彷彿連類別也變了似的。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_strategy">Strategy</h3>
+<div class="paragraph">
+<p>定義一整族演算法，將每一個演算法封裝起來，可互換使用，更可在不影響外界的情況下各別抽換所引用的演算法。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_template_method">Template Method</h3>
+<div class="paragraph">
+<p>對於操作，只先定義好演算法的輪廓，某些步驟則留給子類別去填補，以便在不改變演算法整理結構的情況下，讓子類別去精鍊某些步驟。</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_visitor">Visitor</h3>
+<div class="paragraph">
+<p>定義能逐一施行於物件結構裡各個元素的操作，讓你不必修改作用對象的類別介面，就能定義新的操作。</p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/dp/">DP</a></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{}};</script></div>
+</body>
+
+</html>

@@ -1,46 +1,14 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
-  <channel>
-    <title>Posts on My New Hugo Site</title>
-    <link>https://kuanchungfeng.github.io/posts/</link>
-    <description>Recent content in Posts on My New Hugo Site</description>
-    <generator>Hugo -- gohugo.io</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 01 Jan 2021 10:28:16 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/posts/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>Asciidoc Post</title>
-      <link>https://kuanchungfeng.github.io/posts/asciidoc-post/</link>
-      <pubDate>Fri, 01 Jan 2021 10:28:16 +0800</pubDate>
-      
-      <guid>https://kuanchungfeng.github.io/posts/asciidoc-post/</guid>
-      <description>測試Asciidoc更新到github
- 資料夾結構  archetype
-  like a meta-data，產生預設的frontMatter
-     content
-  基本上所有內容都放在這裡，例如，你要寫一個部落格，文章都放在此資料夾。
-  假如你要寫一個網頁，html檔也放在這裡面。
-     data
-  就像是資料庫存放位置，當然，hugo是產生靜態網頁，不會直接從資料庫連線獲取資訊，但你可以將json檔放在此資料夾，去顯示對應的資料。
-     layouts
-  放一些重複的模板，例如寫一個header.html 或 footer.html讓每頁都去呼叫這些模板
-     static
-  放image，css，js檔等等不會改變的檔案。
-     theme
-  可以使用別人寫好的樣板(主題)，去 官網主題 選擇一個你喜歡的hugo主題，git submodule到你的hugo 資料夾，下載的主體通常會放在此資料夾。
-     config.toml</description>
-    </item>
-    
-    <item>
-      <title>My First Post</title>
-      <link>https://kuanchungfeng.github.io/posts/my-first-post/</link>
-      <pubDate>Tue, 08 Dec 2020 22:55:27 +0800</pubDate>
-      
-      <guid>https://kuanchungfeng.github.io/posts/my-first-post/</guid>
-      <description>測試文章
-  第一章
-  第二章
-  </description>
-    </item>
-    
-  </channel>
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title> - Arthur&#39;s Blog</title>
+        <link>http://example.org/posts/</link>
+        <description> | Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</lastBuildDate><atom:link href="http://example.org/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>認識設計模式，提升你程式的可利用性</title>
+    <link>http://example.org/posts/design-pattern-guide/</link>
+    <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
+        <name></name>
+    </author><guid>http://example.org/posts/design-pattern-guide/</guid>
+    <description><![CDATA[設計模式是什麼? 設計模式(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計]]></description>
+</item></channel>
 </rss>

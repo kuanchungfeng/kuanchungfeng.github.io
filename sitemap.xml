@@ -1,33 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-  xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/posts/asciidoc-post/</loc>
-    <lastmod>2021-01-01T10:28:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/</loc>
-    <lastmod>2021-01-01T10:28:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/posts/</loc>
-    <lastmod>2021-01-01T10:28:16+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/posts/my-first-post/</loc>
-    <lastmod>2020-12-08T22:55:27+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/categories/</loc>
-  </url>
-  
-  <url>
-    <loc>https://kuanchungfeng.github.io/tags/</loc>
-  </url>
-  
-</urlset>
+<urlset
+    xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+    xmlns:xhtml="http://www.w3.org/1999/xhtml"
+    ><url>
+            <loc>http://example.org/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/categories/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/categories/design-pattern/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/tags/dp/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/posts/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/tags/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url><url>
+            <loc>http://example.org/posts/design-pattern-guide/</loc><lastmod>2021-09-06T23:29:10&#43;08:00</lastmod></url></urlset>
