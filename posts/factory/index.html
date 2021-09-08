@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">用烤肉來看工廠模式(上) - Arthur&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="用烤肉來看工廠模式(上)" />
+<meta property="og:description" content="工廠模式三大類 簡單工廠模式(Simple Factory) 工廠方法模式(Factory Method) 抽象工廠模式(Abstract Factory) 在認識三大工廠之前，先來看看以下情境" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kuanchungfeng.github.io/posts/factory/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-09-08T18:35:04+08:00" />
+<meta property="article:modified_time" content="2021-09-08T18:35:04+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="用烤肉來看工廠模式(上)"/>
+<meta name="twitter:description" content="工廠模式三大類 簡單工廠模式(Simple Factory) 工廠方法模式(Factory Method) 抽象工廠模式(Abstract Factory) 在認識三大工廠之前，先來看看以下情境"/>
+<meta name="application-name" content="Arthur&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Arthur&#39;s Blog">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://kuanchungfeng.github.io/posts/factory/" /><link rel="prev" href="https://kuanchungfeng.github.io/posts/design-pattern-guide/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "用烤肉來看工廠模式(上)",
+        "inLanguage": "zh-TW",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/kuanchungfeng.github.io\/posts\/factory\/"
+        },"genre": "posts","keywords": "DP, 工廠模式","wordcount":  2546 ,
+        "url": "https:\/\/kuanchungfeng.github.io\/posts\/factory\/","datePublished": "2021-09-08T18:35:04+08:00","dateModified": "2021-09-08T18:35:04+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                    "@type": "Person",
+                    "name": "Arthur"
+                }],"description": ""
+    }
+    </script></head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title"></h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用烤肉來看工廠模式(上)</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://kuanchungfeng.github.io/authors/arthur'>Arthur</a></span>
+                </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-08">2021-09-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-08">2021-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span></span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#_工廠模式三大類">工廠模式三大類</a></li>
+    <li><a href="#_情境">情境</a></li>
+    <li><a href="#_基本物件介紹">基本物件介紹</a>
+      <ul>
+        <li><a href="#_最重要的肉">最重要的肉</a></li>
+        <li><a href="#_牛肉">牛肉</a></li>
+        <li><a href="#_雞肉">雞肉</a></li>
+        <li><a href="#_豬肉">豬肉</a></li>
+        <li><a href="#_全聯">全聯</a></li>
+      </ul>
+    </li>
+    <li><a href="#_請支援收銀">請支援收銀</a></li>
+    <li><a href="#_簡單工廠模式">簡單工廠模式</a></li>
+    <li><a href="#_想吃烤鯖魚">想吃烤鯖魚</a></li>
+    <li><a href="#_工廠方法模式">工廠方法模式</a>
+      <ul>
+        <li><a href="#_牛肉工廠">牛肉工廠</a></li>
+        <li><a href="#_雞肉工廠">雞肉工廠</a></li>
+        <li><a href="#_豬肉工廠">豬肉工廠</a></li>
+        <li><a href="#_魚肉工廠">魚肉工廠</a></li>
+      </ul>
+    </li>
+    <li><a href="#_走私越南豬肉">走私越南豬肉</a></li>
+    <li><a href="#_抽象工廠模式">抽象工廠模式</a>
+      <ul>
+        <li><a href="#_國產肉工廠">國產肉工廠</a></li>
+        <li><a href="#_進口肉工廠">進口肉工廠</a></li>
+        <li><a href="#_烤肉包組合">烤肉包組合</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div class="sect1">
+<h2 id="_工廠模式三大類"><a class="anchor" href="#_工廠模式三大類"></a>工廠模式三大類</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>簡單工廠模式(Simple Factory)</p>
+</li>
+<li>
+<p>工廠方法模式(Factory Method)</p>
+</li>
+<li>
+<p>抽象工廠模式(Abstract Factory)</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>在認識三大工廠之前，先來看看以下情境。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_情境"><a class="anchor" href="#_情境"></a>情境</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>中秋節快到了，又到了萬家烤肉萬家香的時候，這時候你決定到全聯買烤肉用品，你列了一張代購清單：</p>
+</div>
+<div class="ulist checklist">
+<ul class="checklist">
+<li>
+<p><i class="fa fa-square-o"></i> 烤肉架</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 木炭</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 牛肉</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 豬肉</p>
+</li>
+<li>
+<p><i class="fa fa-square-o"></i> 雞肉</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_基本物件介紹"><a class="anchor" href="#_基本物件介紹"></a>基本物件介紹</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_最重要的肉"><a class="anchor" href="#_最重要的肉"></a>最重要的肉</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public abstract class Meat {
+
+    private String name;
+
+    private int oz;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getOz() {
+        return oz;
+    }
+
+    public void setOz(int oz) {
+        this.oz = oz;
+    }
+
+    public Meat(String name) {
+        this.name = name;
+    }
+
+    public Meat(){
+
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_牛肉"><a class="anchor" href="#_牛肉"></a>牛肉</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class Beef extends Meat{
+
+    public Beef(String name) {
+        super(name);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_雞肉"><a class="anchor" href="#_雞肉"></a>雞肉</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class Chicken extends Meat{
+
+    public Chicken(String name) {
+        super(name);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_豬肉"><a class="anchor" href="#_豬肉"></a>豬肉</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class Pork extends Meat{
+
+    public Pork(String name) {
+        super(name);
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>你抱著期待的心到全聯，準備大買特買，發現全聯有出烤肉組合包，立馬手刀購買</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_全聯"><a class="anchor" href="#_全聯"></a>全聯</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class PXMarket {
+
+    // 烤肉組合包
+    public static void barbecueItemSet(){
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(orderBarbecue(&#34;牛肉&#34;).getName());
+        buy(orderBarbecue(&#34;豬肉&#34;).getName());
+        buy(orderBarbecue(&#34;雞肉&#34;).getName());
+
+    }
+
+    static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+
+    public static void buy(String item){
+        System.out.println(&#34;買到&#34;+item+&#34;了&#34;);
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>買完回家，開始烤肉</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre> //程式進入點
+    public static void main(String[] args) {
+        PXMarket.barbecueItemSet();
+        System.out.println(&#34;回家開烤&#34;);
+    }</pre>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/factory/first-barbecue.png" alt="第一次烤肉結果" width="500"/>
+</div>
+<div class="title">Figure 1. 第一次烤肉結果</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_請支援收銀"><a class="anchor" href="#_請支援收銀"></a>請支援收銀</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>因為組合包很熱銷，客戶絡繹不絕的來買，全聯的廣播不斷出現：「請支援收銀」，全聯決定將點肉的業務外包出去。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_簡單工廠模式"><a class="anchor" href="#_簡單工廠模式"></a>簡單工廠模式</h2>
+<div class="sectionbody">
+<div class="listingblock">
+<div class="content">
+<pre>public class SimpleMeatFactory {
+
+    public static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>全聯的服務只剩單純的組合包功能，將點肉服務外包給簡單肉工廠。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public class PXMarket {
+
+    // 烤肉組合包
+    public static void barbecueItemSet(){
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(SimpleMeatFactory.orderBarbecue(&#34;牛肉&#34;).getName());
+        buy(SimpleMeatFactory.orderBarbecue(&#34;豬肉&#34;).getName());
+        buy(SimpleMeatFactory.orderBarbecue(&#34;雞肉&#34;).getName());
+    }
+
+    public static void buy(String item){
+        System.out.println(&#34;買到&#34;+item+&#34;了&#34;);
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>簡單工廠負責管理物件的創造，如果client端要取得物件，只要給簡單工廠正確的參數即可。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_想吃烤鯖魚"><a class="anchor" href="#_想吃烤鯖魚"></a>想吃烤鯖魚</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>吃完了考肉以後，突然想吃烤鯖魚，你又到全聯點肉，簡單肉工廠為了你加了魚肉到商品列。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public class Fish extends Meat{
+
+    public Fish(String name) {
+        super(name);
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>並將魚肉放到菜單上</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public class SimpleMeatFactory {
+
+    public static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else if(meatType.equals(&#34;魚肉&#34;)){
+            return new Fish(&#34;鯖魚&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>全聯新增賣魚服務</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>   public static void buyFish(){
+        buy(SimpleMeatFactory.orderBarbecue(&#34;魚肉&#34;).getName());
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>買完魚開烤</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    //程式進入點
+    public static void main(String[] args) {
+        PXMarket.buyFish();
+        System.out.println(&#34;回家開烤&#34;);
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>全聯覺得這樣下去不行，每次有客人想要點不同種的肉，它們都要及時修改商品列和菜單，並且這樣違反了OCP法。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_工廠方法模式"><a class="anchor" href="#_工廠方法模式"></a>工廠方法模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>全聯決定與各自的肉工廠合作，於是全聯訂了一個介面，讓想要合作的肉工廠來找它們簽約。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public interface MeatMethodFactory {
+
+    Meat orderMeat();
+
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>之前合作的肉工廠紛紛來簽約</p>
+</div>
+<div class="sect2">
+<h3 id="_牛肉工廠"><a class="anchor" href="#_牛肉工廠"></a>牛肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class BeefFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Beef(&#34;和牛&#34;);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_雞肉工廠"><a class="anchor" href="#_雞肉工廠"></a>雞肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class ChickenFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Chicken(&#34;土雞&#34;);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_豬肉工廠"><a class="anchor" href="#_豬肉工廠"></a>豬肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class PorkFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Pork(&#34;伊比利豬&#34;);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_魚肉工廠"><a class="anchor" href="#_魚肉工廠"></a>魚肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class FishFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Fish(&#34;鯖魚&#34;);
+    }
+}</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>簽約完以後，全聯準備了一台iphone 13，專門為了跟工廠叫肉。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public static Meat callFactory(MeatMethodFactory factory){
+        return factory.orderMeat();
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>之前的買魚服務，只要呼叫對應廠商就可以叫魚了。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>    public static void buyFish(){
+        FishFactory fishFactory = new FishFactory();
+        buy(callFactory(fishFactory).getName());
+    }</pre>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_走私越南豬肉"><a class="anchor" href="#_走私越南豬肉"></a>走私越南豬肉</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>近期國內查獲走私越南豬肉，全聯決定分成國產肉工廠和進口肉工廠，只是想到要重新跟肉工廠簽約，全聯就很頭大。</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_抽象工廠模式"><a class="anchor" href="#_抽象工廠模式"></a>抽象工廠模式</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>全聯後來決定分成國產肉工廠和進口肉工廠，每間肉工廠必須至少供應牛、雞、豬、魚，於是它們又訂了新的介面。</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>public interface AbstractFactory {
+
+    public Beef supplyBeef();
+
+    public Chicken supplyChicken();
+
+    public Pork supplyPork();
+
+    public Fish supplyFish();
+}</pre>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_國產肉工廠"><a class="anchor" href="#_國產肉工廠"></a>國產肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class DomesticFactory implements AbstractFactory{
+    @Override
+    public Beef supplyBeef() {
+        return new Beef(&#34;國產牛肉&#34;);
+    }
+
+    @Override
+    public Chicken supplyChicken() {
+        return new Chicken(&#34;國產雞肉&#34;);
+    }
+
+    @Override
+    public Pork supplyPork() {
+        return new Pork(&#34;國產豬肉&#34;);
+    }
+
+    @Override
+    public Fish supplyFish() {
+        return new Fish(&#34;國產鯖魚&#34;);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_進口肉工廠"><a class="anchor" href="#_進口肉工廠"></a>進口肉工廠</h3>
+<div class="listingblock">
+<div class="content">
+<pre>public class ImportFactory implements AbstractFactory{
+    @Override
+    public Beef supplyBeef() {
+        return new Beef(&#34;進口和牛&#34;);
+    }
+
+    @Override
+    public Chicken supplyChicken() {
+        return new Chicken(&#34;進口雞肉&#34;);
+    }
+
+    @Override
+    public Pork supplyPork() {
+        return new Pork(&#34;進口豬肉&#34;);
+    }
+
+    @Override
+    public Fish supplyFish() {
+        return new Fish(&#34;進口鯖魚&#34;);
+    }
+}</pre>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_烤肉包組合"><a class="anchor" href="#_烤肉包組合"></a>烤肉包組合</h3>
+<div class="listingblock">
+<div class="content">
+<pre>    public static void barbecueItemSet(){
+        DomesticFactory domesticFactory = new DomesticFactory();
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(domesticFactory.supplyBeef().getName());
+        buy(domesticFactory.supplyChicken().getName());
+        buy(domesticFactory.supplyPork().getName());
+
+    }</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>耶!!吃到國產豬肉了，不用擔心吃到有病毒的烤肉了</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/factory/last-barbecue.jpg" alt="最後一次烤肉結果" width="500"/>
+</div>
+<div class="title">Figure 2. 最後一次烤肉結果</div>
+</div>
+<div class="paragraph">
+<p><a href="https://github.com/kuanchungfeng/factory" target="_blank" rel="noopener">gitHub程式碼</a></p>
+</div>
+</div>
+</div>
+</div>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/dp/">DP</a>,&nbsp;<a href="/tags/%E5%B7%A5%E5%BB%A0%E6%A8%A1%E5%BC%8F/">工廠模式</a></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/posts/design-pattern-guide/" class="prev" rel="prev" title="認識設計模式，提升你程式的可利用性"><i class="fas fa-angle-left fa-fw"></i>認識設計模式，提升你程式的可利用性</a></div>
+</div>
+</article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{}};</script></div>
+</body>
+
+</html>

@@ -3,7 +3,13 @@
         <title>DP - tag - Arthur&#39;s Blog</title>
         <link>https://kuanchungfeng.github.io/tags/dp/</link>
         <description>DP - tag - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+    <title>用烤肉來看工廠模式(上)</title>
+    <link>https://kuanchungfeng.github.io/posts/factory/</link>
+    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
+                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/factory/</guid>
+    <description><![CDATA[工廠模式三大類 簡單工廠模式(Simple Factory) 工廠方法模式(Factory Method) 抽象工廠模式(Abstract Factory) 在認識三大工廠之前，先來看看以下情境]]></description>
+</item><item>
     <title>認識設計模式，提升你程式的可利用性</title>
     <link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link>
     <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
