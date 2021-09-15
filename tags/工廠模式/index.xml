@@ -3,7 +3,13 @@
         <title>工廠模式 - tag - Arthur&#39;s Blog</title>
         <link>https://kuanchungfeng.github.io/tags/%E5%B7%A5%E5%BB%A0%E6%A8%A1%E5%BC%8F/</link>
         <description>工廠模式 - tag - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/%E5%B7%A5%E5%BB%A0%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/%E5%B7%A5%E5%BB%A0%E6%A8%A1%E5%BC%8F/" rel="self" type="application/rss+xml" /><item>
+    <title>用烤肉來看工廠模式(下)</title>
+    <link>https://kuanchungfeng.github.io/posts/factory2/</link>
+    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
+                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid>
+    <description><![CDATA[上一篇看完了情境，這一篇來說工廠模式的五大成分： 目的 時機 結構 角色 效果 簡單工廠模式 目的 利用傳入一個參數來取得不同的類別物件 時機 當使用者只想要取]]></description>
+</item><item>
     <title>用烤肉來看工廠模式(上)</title>
     <link>https://kuanchungfeng.github.io/posts/factory/</link>
     <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
