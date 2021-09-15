@@ -20,7 +20,7 @@
 
 <meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
         <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://kuanchungfeng.github.io/posts/factory/" /><link rel="prev" href="https://kuanchungfeng.github.io/posts/design-pattern-guide/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://kuanchungfeng.github.io/posts/factory/" /><link rel="prev" href="https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/" /><link rel="next" href="https://kuanchungfeng.github.io/posts/factory2/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
     <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
     <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
     {
@@ -83,55 +83,13 @@
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><div class="toc" id="toc-auto">
-        <h2 class="toc-title"></h2>
-        <div class="toc-content" id="toc-content-auto"></div>
-    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用烤肉來看工廠模式(上)</h1><div class="post-meta">
+            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用烤肉來看工廠模式(上)</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://kuanchungfeng.github.io/authors/arthur'>Arthur</a></span>
                 </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-08">2021-09-08</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-08">2021-09-08</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
-        </div><div class="details toc" id="toc-static"  kept="">
-                <div class="details-summary toc-title">
-                    <span></span>
-                    <span><i class="details-icon fas fa-angle-right"></i></span>
-                </div>
-                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#_工廠模式三大類">工廠模式三大類</a></li>
-    <li><a href="#_情境">情境</a></li>
-    <li><a href="#_基本物件介紹">基本物件介紹</a>
-      <ul>
-        <li><a href="#_最重要的肉">最重要的肉</a></li>
-        <li><a href="#_牛肉">牛肉</a></li>
-        <li><a href="#_雞肉">雞肉</a></li>
-        <li><a href="#_豬肉">豬肉</a></li>
-        <li><a href="#_全聯">全聯</a></li>
-      </ul>
-    </li>
-    <li><a href="#_請支援收銀">請支援收銀</a></li>
-    <li><a href="#_簡單工廠模式">簡單工廠模式</a></li>
-    <li><a href="#_想吃烤鯖魚">想吃烤鯖魚</a></li>
-    <li><a href="#_工廠方法模式">工廠方法模式</a>
-      <ul>
-        <li><a href="#_牛肉工廠">牛肉工廠</a></li>
-        <li><a href="#_雞肉工廠">雞肉工廠</a></li>
-        <li><a href="#_豬肉工廠">豬肉工廠</a></li>
-        <li><a href="#_魚肉工廠">魚肉工廠</a></li>
-      </ul>
-    </li>
-    <li><a href="#_走私越南豬肉">走私越南豬肉</a></li>
-    <li><a href="#_抽象工廠模式">抽象工廠模式</a>
-      <ul>
-        <li><a href="#_國產肉工廠">國產肉工廠</a></li>
-        <li><a href="#_進口肉工廠">進口肉工廠</a></li>
-        <li><a href="#_烤肉包組合">烤肉包組合</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav></div>
-            </div><div class="content" id="content">
+        </div><div class="content" id="content">
 <div class="sect1">
 <h2 id="_工廠模式三大類"><a class="anchor" href="#_工廠模式三大類"></a>工廠模式三大類</h2>
 <div class="sectionbody">
@@ -673,7 +631,8 @@
         </section>
     </div>
 
-    <div class="post-nav"><a href="/posts/design-pattern-guide/" class="prev" rel="prev" title="認識設計模式，提升你程式的可利用性"><i class="fas fa-angle-left fa-fw"></i>認識設計模式，提升你程式的可利用性</a></div>
+    <div class="post-nav"><a href="/posts/design-pattern-learning-guide/" class="prev" rel="prev" title="設計模式學習地圖"><i class="fas fa-angle-left fa-fw"></i>設計模式學習地圖</a>
+            <a href="/posts/factory2/" class="next" rel="next" title="用烤肉來看工廠模式(下)">用烤肉來看工廠模式(下)<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
 </article></div>
         </main><footer class="footer">
