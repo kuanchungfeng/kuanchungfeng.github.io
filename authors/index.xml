@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Authors - author - Arthur&#39;s Blog</title>
+        <link>https://kuanchungfeng.github.io/authors/</link>
+        <description>Authors - author - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/authors/" rel="self" type="application/rss+xml" /><item>
+    <title>Arthur</title>
+    <link>https://kuanchungfeng.github.io/authors/arthur/</link>
+    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
+        <name></name>
+    </author><guid>https://kuanchungfeng.github.io/authors/arthur/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>
