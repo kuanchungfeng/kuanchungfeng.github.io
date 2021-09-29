@@ -69,7 +69,7 @@ if (!doNotTrack) {
             <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><a class="menu-item" href="/authors/"> 作者 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a></div>
         </div>
@@ -84,7 +84,7 @@ if (!doNotTrack) {
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a class="menu-item" href="/authors/" title="">作者</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -96,13 +96,66 @@ if (!doNotTrack) {
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">認識設計模式，提升你程式的可利用性</h1><div class="post-meta">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title"></h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">認識設計模式，提升你程式的可利用性</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://kuanchungfeng.github.io/authors/arthur'>Arthur</a></span>
                 </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-06">2021-09-06</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-06">2021-09-06</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
-        </div><div class="content" id="content"><div class="sect1">
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span></span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#_設計模式是什麼">設計模式是什麼?</a>
+      <ul>
+        <li><a href="#_gang_of_fourgof">Gang of Four(GoF)</a></li>
+      </ul>
+    </li>
+    <li><a href="#_設計模式的優點">設計模式的優點</a></li>
+    <li><a href="#_何時不該使用設計模式">何時不該使用設計模式</a></li>
+    <li><a href="#_設計模式的分類">設計模式的分類</a>
+      <ul>
+        <li><a href="#_目的">目的</a></li>
+        <li><a href="#_範疇">範疇</a></li>
+      </ul>
+    </li>
+    <li><a href="#_一口氣看完23個設計模式">一口氣看完23個設計模式</a>
+      <ul>
+        <li><a href="#_abstract_factory">Abstract Factory</a></li>
+        <li><a href="#_adapter">Adapter</a></li>
+        <li><a href="#_bridge">Bridge</a></li>
+        <li><a href="#_builder">Builder</a></li>
+        <li><a href="#_chain_of_responsibility">Chain of Responsibility</a></li>
+        <li><a href="#_command">Command</a></li>
+        <li><a href="#_composite">Composite</a></li>
+        <li><a href="#_decorator">Decorator</a></li>
+        <li><a href="#_facade">Facade</a></li>
+        <li><a href="#_factory_method">Factory Method</a></li>
+        <li><a href="#_flyweight">Flyweight</a></li>
+        <li><a href="#_interpreter">Interpreter</a></li>
+        <li><a href="#_iterator">Iterator</a></li>
+        <li><a href="#_mediator">Mediator</a></li>
+        <li><a href="#_memento">Memento</a></li>
+        <li><a href="#_observer">Observer</a></li>
+        <li><a href="#_prototype">Prototype</a></li>
+        <li><a href="#_proxy">Proxy</a></li>
+        <li><a href="#_singleton">Singleton</a></li>
+        <li><a href="#_state">State</a></li>
+        <li><a href="#_strategy">Strategy</a></li>
+        <li><a href="#_template_method">Template Method</a></li>
+        <li><a href="#_visitor">Visitor</a></li>
+      </ul>
+    </li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div class="sect1">
 <h2 id="_設計模式是什麼">設計模式是什麼?</h2>
 <div class="sectionbody">
 <div class="paragraph">
@@ -380,26 +433,7 @@ if (!doNotTrack) {
 </div>
 </div>
 
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "arthur-blog-1" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><div class="post-footer" id="post-footer">
+<div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -425,7 +459,30 @@ if (!doNotTrack) {
     <div class="post-nav">
             <a href="/posts/design-pattern-learning-guide/" class="next" rel="next" title="設計模式學習地圖">設計模式學習地圖<i class="fas fa-angle-right fa-fw"></i></a></div>
 </div>
-</article></div>
+<br>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "arthur-blog-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>

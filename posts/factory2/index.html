@@ -69,7 +69,7 @@ if (!doNotTrack) {
             <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
         </div>
         <div class="menu">
-            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><a class="menu-item" href="/authors/"> 作者 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
                     <i class="fas fa-adjust fa-fw"></i>
                 </a></div>
         </div>
@@ -84,7 +84,7 @@ if (!doNotTrack) {
                 <span></span><span></span><span></span>
             </div>
         </div>
-        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a class="menu-item" href="/authors/" title="">作者</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
                 <i class="fas fa-adjust fa-fw"></i>
             </a></div>
     </div>
@@ -96,13 +96,54 @@ if (!doNotTrack) {
     <div id="search-dropdown-mobile"></div>
 </div>
 <main class="main">
-            <div class="container"><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "false")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用烤肉來看工廠模式(下)</h1><div class="post-meta">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title"></h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">用烤肉來看工廠模式(下)</h1><div class="post-meta">
             <div class="post-meta-line">
                 <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://kuanchungfeng.github.io/authors/arthur'>Arthur</a></span>
                 </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
             <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-09-14">2021-09-14</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-09-14">2021-09-14</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
                 <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
-        </div><div class="content" id="content">
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span></span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#_簡單工廠模式">簡單工廠模式</a>
+      <ul>
+        <li><a href="#_目的">目的</a></li>
+        <li><a href="#_時機">時機</a></li>
+        <li><a href="#_結構">結構</a></li>
+        <li><a href="#_角色">角色</a></li>
+        <li><a href="#_效果">效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#_工廠方法模式">工廠方法模式</a>
+      <ul>
+        <li><a href="#_目的_2">目的</a></li>
+        <li><a href="#_時機_2">時機</a></li>
+        <li><a href="#_結構_2">結構</a></li>
+        <li><a href="#_角色_2">角色</a></li>
+        <li><a href="#_效果_2">效果</a></li>
+        <li><a href="#_spring_應用">Spring 應用</a></li>
+      </ul>
+    </li>
+    <li><a href="#_抽象工廠模式">抽象工廠模式</a>
+      <ul>
+        <li><a href="#_目的_3">目的</a></li>
+        <li><a href="#_時機_3">時機</a></li>
+        <li><a href="#_結構_3">結構</a></li>
+        <li><a href="#_角色_3">角色</a></li>
+        <li><a href="#_效果_3">效果</a></li>
+      </ul>
+    </li>
+    <li><a href="#_總結">總結</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content">
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
@@ -432,26 +473,7 @@ if (!doNotTrack) {
 </div>
 </div>
 
-        <div id="disqus_thread"></div>
-<script type="application/javascript">
-    var disqus_config = function () {
-    
-    
-    
-    };
-    (function() {
-        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
-            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
-            return;
-        }
-        var d = document, s = d.createElement('script'); s.async = true;
-        s.src = '//' + "arthur-blog-1" + '.disqus.com/embed.js';
-        s.setAttribute('data-timestamp', +new Date());
-        (d.head || d.body).appendChild(s);
-    })();
-</script>
-<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
-<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a><div class="post-footer" id="post-footer">
+<div class="post-footer" id="post-footer">
     <div class="post-info">
         <div class="post-info-line">
             <div class="post-info-mod">
@@ -476,7 +498,30 @@ if (!doNotTrack) {
 
     <div class="post-nav"><a href="/posts/factory/" class="prev" rel="prev" title="用烤肉來看工廠模式(上)"><i class="fas fa-angle-left fa-fw"></i>用烤肉來看工廠模式(上)</a></div>
 </div>
-</article></div>
+<br>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "arthur-blog-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </article></div>
         </main><footer class="footer">
         <div class="footer-container"><div class="footer-line">
                 </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
