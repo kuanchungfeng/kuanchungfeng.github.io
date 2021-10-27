@@ -1,0 +1,1363 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title">深入淺出JasperReports - Arthur&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="深入淺出JasperReports" />
+<meta property="og:description" content="簡介 為 Java 開發的開源程式庫 開發易擴充的動態報表 具有表格、圖表、地圖、子報表等功能 支援匯出多種格式(docx、xls、odt、ods、pdf、h" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kuanchungfeng.github.io/posts/jasper-report/" /><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2021-02-26T18:35:04+08:00" />
+<meta property="article:modified_time" content="2021-02-26T18:35:04+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="深入淺出JasperReports"/>
+<meta name="twitter:description" content="簡介 為 Java 開發的開源程式庫 開發易擴充的動態報表 具有表格、圖表、地圖、子報表等功能 支援匯出多種格式(docx、xls、odt、ods、pdf、h"/>
+<meta name="application-name" content="Arthur&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Arthur&#39;s Blog">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://kuanchungfeng.github.io/posts/jasper-report/" /><link rel="next" href="https://kuanchungfeng.github.io/posts/design-pattern-guide/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "深入淺出JasperReports",
+        "inLanguage": "zh-TW",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/kuanchungfeng.github.io\/posts\/jasper-report\/"
+        },"genre": "posts","keywords": "JasperReports, 報表設計","wordcount":  4379 ,
+        "url": "https:\/\/kuanchungfeng.github.io\/posts\/jasper-report\/","datePublished": "2021-02-26T18:35:04+08:00","dateModified": "2021-02-26T18:35:04+08:00","publisher": {
+            "@type": "Organization",
+            "name": ""},"authors": [{
+                    "@type": "Person",
+                    "name": "Arthur"
+                }],"description": ""
+    }
+    </script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-207691705-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+</head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><a class="menu-item" href="/authors/"> 作者 </a><a class="menu-item" href="/about/"> 經驗 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a class="menu-item" href="/authors/" title="">作者</a><a class="menu-item" href="/about/" title="">經驗</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="toc" id="toc-auto">
+        <h2 class="toc-title"></h2>
+        <div class="toc-content" id="toc-content-auto"></div>
+    </div><script>document.getElementsByTagName("main")[0].setAttribute("pageStyle", "normal")</script><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC", "true")</script><article class="page single"><h1 class="single-title animate__animated animate__flipInX">深入淺出JasperReports</h1><div class="post-meta">
+            <div class="post-meta-line">
+                <span class="post-author"><span class='author'><i class="author fas fa-user-circle fa-fw"></i><span class='screen-reader-text'>  </span><a href='https://kuanchungfeng.github.io/authors/arthur'>Arthur</a></span>
+                </span>&nbsp;<span class="post-category"></span>&nbsp;<span class="post-category"></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw"></i>&nbsp;<time datetime="2021-02-26">2021-02-26</time>&nbsp;<i class="far fa-edit fa-fw"></i>&nbsp;<time datetime="2021-02-26">2021-02-26</time>&nbsp;<i class="fas fa-pencil-alt fa-fw"></i>&nbsp;&nbsp;
+                <i class="far fa-clock fa-fw"></i>&nbsp;&nbsp;</div>
+        </div><div class="details toc" id="toc-static"  kept="">
+                <div class="details-summary toc-title">
+                    <span></span>
+                    <span><i class="details-icon fas fa-angle-right"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#_簡介">簡介</a></li>
+    <li><a href="#_生命週期">生命週期</a></li>
+    <li><a href="#_開發思考流程">開發思考流程</a></li>
+    <li><a href="#_band">Band</a></li>
+    <li><a href="#_fields_parameters">Fields &amp; Parameters</a></li>
+    <li><a href="#_variables">Variables</a></li>
+    <li><a href="#_subreport">Subreport</a></li>
+    <li><a href="#_問題分享">問題分享</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content">
+<div class="sect1">
+<h2 id="_簡介"><a class="anchor" href="#_簡介"></a>簡介</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>為 Java 開發的<strong>開源</strong>程式庫</p>
+</li>
+<li>
+<p>開發易擴充的動態報表</p>
+</li>
+<li>
+<p>具有表格、圖表、地圖、子報表等功能</p>
+</li>
+<li>
+<p>支援匯出多種格式(docx、xls、odt、ods、pdf、html…​)</p>
+</li>
+<li>
+<p>可以通過多種方式提供數據(csv、JDBC、json…​)</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_生命週期"><a class="anchor" href="#_生命週期"></a>生命週期</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>Design</p>
+</li>
+<li>
+<p>Compile</p>
+</li>
+<li>
+<p>Execution</p>
+</li>
+<li>
+<p>Export</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/jasper-life-cycle.jpg" alt="jasper life cycle"/>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_開發思考流程"><a class="anchor" href="#_開發思考流程"></a>開發思考流程</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>了解使用者報表需求(是否需要影印，如果要，詢問紙張大小)</p>
+</li>
+</ol>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Page Type</th>
+<th class="tableblock halign-left valign-top">Dimensions in Pixels</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A3</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>842x1190</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>595x842</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>A5</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>421x595</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>B4</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>709x1002</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>B5</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>501x709</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="olist arabic">
+<ol class="arabic" start="2">
+<li>
+<p>思考要使用的Band</p>
+</li>
+<li>
+<p>設定預設的Styles(記得勾Default Style)</p>
+</li>
+<li>
+<p>加上要用的Fields &amp; Parameters</p>
+</li>
+<li>
+<p>思考需不需要使用Variables</p>
+</li>
+<li>
+<p>開始設計報表(拉元件到畫面)</p>
+</li>
+<li>
+<p>設定屬性</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_band"><a class="anchor" href="#_band"></a>Band</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_簡介_2"><a class="anchor" href="#_簡介_2"></a>簡介</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>十二個Band</p>
+</li>
+<li>
+<p>Band寬度為100%，高度可以自定義</p>
+</li>
+<li>
+<p>大部分的Band高度會自動擴增(遇到subReport，或是TextField超出時)，column Footer 、page Footer、last Page Footer除外。</p>
+</li>
+<li>
+<p>所有Band高度的總和必須小於等於整頁高度-上下的外距(margin)</p>
+</li>
+<li>
+<p>Band三大屬性有Height、Split Type、Print When Expression</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Split Type ，設定當該頁或該欄剩餘的空間不足以容納該 Band 時，要如何安排該 Band。</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. Split Type</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Split Type屬性</th>
+<th class="tableblock halign-left valign-top">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Stretch</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>default，如果實際高度大於Band高度，超出的部分就可能被切斷。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Prevent</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>避免被切斷，整個 Band 移到下一頁或下一欄，但如果下一頁或下一欄還是不夠高的話，還是會被切斷。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Immediate</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>立即被切斷，該頁或該欄放不下的部份移到下一頁或下一欄，Band 會被切成兩塊以上。</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect2">
+<h3 id="_band介紹"><a class="anchor" href="#_band介紹"></a>Band介紹</h3>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 2. Band介紹</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Band 名稱</th>
+<th class="tableblock halign-left valign-top">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Title</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>標題，只會在報表的第一頁最上方出現。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Page Header</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>頁首，在報表的每一頁上面都會出現，除了第一頁是在Title底下以外，其他頁面的頁首都會在最上面。(如果有選Summary On A New Page，則最後一頁不會出現)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Column Header</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>表頭，一般用來放欄位名稱。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Group Header</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>組表頭，如果有設定Group會出現，介於Column Header 跟 Detail中間。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Detail</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>報表的內容，實際要呈現的內容放在這裡。Detail允許有多個Band(Detail1、Detail2、.. Detail n)。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Group Footer</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>組表尾，如果有設定Group會出現，介於Detail 跟 Column Footer之間。如果超過一個組被定義，組表尾出現在組定義的順序相反(Group3、Group2、Group1)。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Column Footer</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>表尾，出現在每頁Detail的下方。(如果有設定Float Column Footer就會動態的在最後一頁的Detail下方)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Page Footer</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>頁尾，出現在每個頁面的底部。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Last Page Footer</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>最後一頁的頁尾，如果有設定會取代最後一頁的Page Footer。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Summary</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>出現在報表最後一頁的Detail底下，可以放一些統計的東西。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>No Data</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>無資料區塊，當資料為0筆且When No Data Type設定為No Data Section，才會顯示這塊的內容。</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Background</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>用於創建浮水印用。背景部分會顯示在每一頁上，並且不能溢出到下一個頁面。放在這一部分的元素在頁面初始化的時候求值，並顯示在背景中。所有其他的頁面對象被顯示在背景上對象的頂部。用於創建浮水印用。</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_fields_parameters"><a class="anchor" href="#_fields_parameters"></a>Fields &amp; Parameters</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Fields：用來顯示Datasource取回來的資料</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Fields三大屬性</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name(欄位名稱)</p>
+</li>
+<li>
+<p>Class(型別)</p>
+</li>
+<li>
+<p>Description(說明)</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Parameters：外部傳來的一些參數，可以用在標題字串、列印日期、判斷的boolean值等等。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Parameters屬性</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name(參數名稱，從後端傳來的變數名稱)</p>
+</li>
+<li>
+<p>Class(型別)</p>
+</li>
+<li>
+<p>Description(說明，可寫可不寫)</p>
+</li>
+<li>
+<p>Is for Prompting(如果不打勾，用Preview預覽時就不會要求打參數)</p>
+</li>
+<li>
+<p>Default Value Expression(預設的表達式)</p>
+</li>
+<li>
+<p>Evaluation Time(決定連線前後，要執行預設表達式的時機)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Early：在連線前，執行預設的表達式</p>
+</li>
+<li>
+<p>Late：在連線後，執行預設的表達式</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_variables"><a class="anchor" href="#_variables"></a>Variables</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Variables：用來儲存對某個表達式計算後的結果，可用來統計、傳遞子報表的參數。</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Variables屬性</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Name(參數名稱，畫面元件Expression用[$V{Name}])</p>
+</li>
+<li>
+<p>Value Class Name(類別)</p>
+</li>
+<li>
+<p>Calculation(要如何對表達式作計算)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>Calculation只能做數字的計算</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 3. Calculation</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Calculation屬性</th>
+<th class="tableblock halign-left valign-top">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Nothing</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>不做任何計算，直接根據表達式把值印出，可用這個做簡單的運算(ex:$P{a}+$P{b}，但只能計算數字類型)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Count</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>計算有幾筆資料</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Distinct Count</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>計算有幾筆不重複的資料</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Sum</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>把資料的值累加</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Average</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>累加結果的平均值</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Lowest</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>表達式的最小值</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Highest</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>表達式的最大值</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>StandardDeviation</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>根據表達式的所有值傳回標準差</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Variance</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>根據表達式的所有值傳回變異數</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>System</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>可以自己控制計算方式(比如用Java程式)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Expression(用來做計算的變數)</p>
+</li>
+<li>
+<p>Initial Value Expression(Variable初始化的值，如果沒給就指向Expression的值)</p>
+</li>
+<li>
+<p>Increment Type(Variable在什麼時候做計算)</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 4. Increment Type</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Increment Type屬性</th>
+<th class="tableblock halign-left valign-top">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Report</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>只有在報表的最後計算一次</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Page</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每頁都計算一次(每經過一個Page Header計算一次)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Column</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每一列都計算一次(每經過一個Column Header計算一次)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Group</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每一個群組計算一次，需要設定Group</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>每筆資料都會做運算</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Reset Type(Variable在什麼時候會重置，需要設定Initial Value Expression，沒給的話，重置會變成null)</p>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 5. Reset Type</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Reset Type屬性</th>
+<th class="tableblock halign-left valign-top">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Report</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>只有在報表創建時會進行重置</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Page</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每頁都重置一次(每個Page Header重置一次)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Column</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每一列都重置一次(每個Column Header重置一次)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Group</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>在每一個群組會重置一次，需要設定Group</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>None</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>Variable不會被重置，所以不用設定Initial Value Expression</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+<div class="ulist">
+<ul>
+<li>
+<p>Incrementer Factory Class Name(用來客製化計算的一個的Java類別，需要實作net.sf.jasperreports.engine.fill.JRIncrementerFactory介面)</p>
+<div class="ulist">
+<ul>
+<li>
+<p>假如你的Variable的Value Class Name為java.lang.Integer，但你的Expression回傳字串型別的值，這個變數的值會為<strong>0</strong></p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>JasperReports內建Variables</p>
+<div class="ulist">
+<ul>
+<li>
+<p>內建的Variables可以直接拿來使用，但無法做修改</p>
+</li>
+</ul>
+</div>
+</li>
+</ul>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 6. 內建Variables</caption>
+<colgroup>
+<col style="width: 50%;"/>
+<col style="width: 50%;"/>
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Variables名稱</th>
+<th class="tableblock halign-left valign-top">說明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>REPORT_COUNT</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>報表到目前為止共包含幾筆資料(如果要流水編號可以用這個)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>PAGE_NUMBER</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>可以顯示當前所在的頁數，也可以顯示報表的總頁數(根據TextField的evaluationTime屬性設定為Now還是Report決定要顯示什麼)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>COLUMN_NUMBER</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>當前的COLUMN數(通常一頁只會有一個Column，所以為1，如果一頁有多個Column時，才會有用處)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>PAGE_COUNT</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>當前頁包含幾筆資料(當前Page Header 跟 Page Footer之間的Detail裡面有幾筆)</p>
+</div></div></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>COLUMN_COUNT</p>
+</div></div></td>
+<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
+<p>當前列包含幾筆資料(當前Column Header 跟 Column Footer之間的Detail裡面有幾筆)</p>
+</div></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_subreport"><a class="anchor" href="#_subreport"></a>Subreport</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_簡介_3"><a class="anchor" href="#_簡介_3"></a>簡介</h3>
+<div class="paragraph">
+<p>有時候遇到需要合併儲存格的表格，或是一對多的資料結構，這時候就可以使用子報表來呈現。</p>
+</div>
+<div class="sect3">
+<h4 id="_子報表的兩大好處"><a class="anchor" href="#_子報表的兩大好處"></a>子報表的兩大好處</h4>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>模組化報表</p>
+</li>
+<li>
+<p>可以連不同的資料來源</p>
+</li>
+</ol>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_subreport_屬性"><a class="anchor" href="#_subreport_屬性"></a>Subreport 屬性</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Run To Buttom(如果選true，該子報表會填滿該頁全部，適合子報表的內容為一筆資料一頁用)</p>
+</li>
+<li>
+<p>Overflow Type(判斷子報表是否要超過母報表的高度)</p>
+</li>
+<li>
+<p>Using Cache(是否快取)</p>
+</li>
+<li>
+<p>Connection Expression or Datasource Expression(資料來源，可以是直接連DB或是用JRBeanCollectionDataSource傳資料)</p>
+</li>
+<li>
+<p>Parameters Map Expression(可以傳一個Map當作參數進去)</p>
+</li>
+<li>
+<p>Edit Return Values(子報表回傳的資料，通常用在傳總計或是數量)</p>
+</li>
+<li>
+<p>Edit Parameters(傳進去子報表的資料，可以用在ID辨別)</p>
+</li>
+<li>
+<p>Expression(子報表的檔案來源，用字串去記)</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>子報表Expression判斷順序</p>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>網址</p>
+</li>
+<li>
+<p>同層資料夾的檔名</p>
+</li>
+<li>
+<p>加上絕對路徑的檔案</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>不能使用相對路徑</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_參數傳遞"><a class="anchor" href="#_參數傳遞"></a>參數傳遞</h3>
+<div class="paragraph">
+<p>參數傳遞可分為從 <strong>主報表傳進子報表</strong> 和 <strong>子報表傳回主報表</strong></p>
+</div>
+<div class="sect3">
+<h4 id="_主報表傳進子報表"><a class="anchor" href="#_主報表傳進子報表"></a>主報表傳進子報表</h4>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-report-parameter.jpg" alt="sub report parameter"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Parameter Name ：輸入參數名稱</p>
+</li>
+<li>
+<p>Parameter Expression ：輸入參數內容，expression可以為字串、數字、參數、變數等等。如下圖：</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-report-parameter-add.jpg" alt="sub report parameter add"/>
+</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_子報表傳回主報表"><a class="anchor" href="#_子報表傳回主報表"></a>子報表傳回主報表</h4>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-report-parameter-return.jpg" alt="sub report parameter return"/>
+</div>
+</div>
+<div class="paragraph">
+<p>回傳參數需要設兩個變數，一個在主報表一個在子報表，如下圖：</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-report-parameter-return-add.jpg" alt="sub report parameter return add"/>
+</div>
+</div>
+<div class="paragraph">
+<p>子報表的變數</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Value Class Name改成跟主報表設定變數的類別一樣</p>
+</li>
+<li>
+<p>Calculation 看你是否有要做計算，這邊是計算某欄位的總和</p>
+</li>
+<li>
+<p>Expression 要做總和的Field，可以用三元運算子來做if判斷</p>
+</li>
+<li>
+<p>Initial Value Expression 可以設定初始值，例如我這邊設0</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-export-variable.jpg" alt="sub export variable"/>
+</div>
+</div>
+<div class="paragraph">
+<p>主報表的變數
+- Value Class Name改成跟子報表設定變數的類別一樣
+- Increment type 跟 Reset type 設成 Report</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/main-report-variable.jpg" alt="main report variable"/>
+</div>
+</div>
+<div class="admonitionblock tip">
+<table>
+<tbody><tr>
+<td class="icon">
+<i class="fa icon-tip" title="Tip"></i>
+</td>
+<td class="content">
+主報表要放傳回變數的TextField，要將Evaluation Time改成Band，如下圖：
+</td>
+</tr>
+</tbody></table>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/return-text-field.jpg" alt="return text field"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_問題分享"><a class="anchor" href="#_問題分享"></a>問題分享</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>如果只要產製證書或申請表等只有參數的報表，將所有內容刻在Title的Band，並將該Jasper的Report設定中的When No Data Type選成 <strong>All Sections No Detail</strong></p>
+</li>
+<li>
+<p>有時候excel表格超過一定行數就自動跳頁，這時如果不想要自動跳頁，將report的主設定中的 <strong>Ignore Pagination</strong> 打勾，就不會幾行就自動跳頁了。如下圖：</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/jasper-pagination.jpg" alt="jasper pagination"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="3">
+<li>
+<p>如果想要產生動態欄位報表 ，可以將Appearance 裡面的 Print When Expresion 設定布林條件，決定是否要顯示該欄位，如下圖：</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/print-when-expression.jpg" alt="print when expression"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="4">
+<li>
+<p>如果想要一個TextField裡有不同字體大小或顏色</p>
+<div class="ulist">
+<ul>
+<li>
+<p>先將TextField裡的markUp改成html，如圖：</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/jasper-markup.jpg" alt="jasper markup"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>在Expression裡面加上&lt;font&gt;&lt;/font&gt;，如圖：</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/font-example.jpg" alt="font example"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>也可以用&lt;span style=&#39;font-size:16px;&#39;&gt;</p>
+</li>
+</ul>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="5">
+<li>
+<p>如果TextField 靠右對齊時，發現離右邊框線太近時，可以用right Indent去微調靠近右邊的px，如下圖：</p>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/right-indent.jpg" alt="right indent"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="6">
+<li>
+<p>如何在japser加上正方形實心框框 ■ 或是 空心框框 □ ?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>將textField 的 markup 改成 html，如圖：</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/jasper-markup.jpg" alt="jasper markup"/>
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>在 expression 使用html Geometric Shapes</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>參考 <a href="https://www.w3schools.com/charsets/ref_utf_geometric.asp">UTF-8 Geometric Shapes</a></p>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="7">
+<li>
+<p>如何讓detail的每個欄位等長且與最高的欄位同高?</p>
+<div class="ulist">
+<ul>
+<li>
+<p>一種方法是用成一個ElementGroup</p>
+</li>
+<li>
+<p>另一種方法是改變這些屬性</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>1. Set &#34;Position&#34; to &#34;Float&#34;
+2. Set &#34;Stretch Type&#34; to &#34;ContainerBottom&#34;
+3. Check &#34;Print when detail overflows&#34; checkbox.
+4. Check the &#34;Stretch with overflow&#34; checkbox.</pre>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="8">
+<li>
+<p>換行</p>
+<div class="ulist">
+<ul>
+<li>
+<p>staticText 欄位</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>點擊兩下該欄位，Shift + Enter 換行</p>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>textField</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>加上&#34;\n&#34;</p>
+</li>
+<li>
+<p>將Markup 改成 html,用&lt;br&gt;</p>
+</li>
+</ol>
+</div>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="9">
+<li>
+<p>如何讓Field、Parameter、Variable的數字有三位一撇  ? (ex:1000→1,000)</p>
+<div class="olist loweralpha">
+<ol class="loweralpha" type="a">
+<li>
+<p>將TextField的Expression加上DecimalFormat的方法format，如下圖：</p>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/number-with-common.jpg" alt="number with common"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="10">
+<li>
+<p>背景顏色修改</p>
+<div class="ulist">
+<ul>
+<li>
+<p>幾乎每個Elements有一個共有的屬性-Backcolor(背景顏色)，但修改後如果發現畫面沒有做修改，可能是因為Transparent(透明)選取了，此時記得將下面的transparent的打勾<strong>取消</strong>，如下圖：</p>
+</li>
+</ul>
+</div>
+</li>
+</ol>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/transparent.jpg" alt="transparent"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="11">
+<li>
+<p>在產製儲存格合併的表格時，可能會遇到分頁中間有斷行的問題。</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>將Detail Band的 <strong>Split Type</strong>(分裂類型) 改成 <strong>Prevent</strong>(避免)，這樣就能解決子報表跳頁底線跑版的問題。</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/jasper-report/sub-report-question-solve.jpg" alt="sub report question solve"/>
+</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic" start="12">
+<li>
+<p>如果用同樣的JRBeanCollectionDataSource塞給兩個subReport，會產生第一個子報表有抓到值，而第二個沒有，這時候把子報表的資料參數改成用list接，如下：</p>
+</li>
+</ol>
+</div>
+<div class="paragraph">
+<p>Java裡寫</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>paramsMap.put(&#34;statsData&#34;, summaryList);</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>jrxml裡寫</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>&lt;parameter name=&#34;statsData&#34; class=&#34;java.util.List&#34;/&gt;
+...
+&lt;subreportParameter name=&#34;statsData&#34;&gt;
+    &lt;subreportParameterExpression&gt;
+        &lt;![CDATA[new net.sf.jasperreports.engine.data.
+JRBeanCollectionDataSource($P{statsData})]]&gt;
+    &lt;/subreportParameterExpression&gt;
+&lt;/subreportParameter&gt;
+...</pre>
+</div>
+</div>
+<div class="paragraph">
+<p>本問題參考
+<a href="https://www.hellojava.com/a/54282.html" class="bare">https://www.hellojava.com/a/54282.html</a></p>
+</div>
+</div>
+</div>
+</div>
+
+<div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span></span>
+            </div>
+            <div class="post-info-license"></div>
+        </div>
+        <div class="post-info-line">
+            <div class="post-info-md"></div>
+            <div class="post-info-share">
+                <span></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw"></i>&nbsp;<a href="/tags/jasperreports/">JasperReports</a>,&nbsp;<a href="/tags/%E5%A0%B1%E8%A1%A8%E8%A8%AD%E8%A8%88/">報表設計</a></section>
+        <section>
+            <span><a href="#" onclick="window.history.back();"></a></span>&nbsp;|&nbsp;<span><a href="/"></a></span>
+        </section>
+    </div>
+
+    <div class="post-nav">
+            <a href="/posts/design-pattern-guide/" class="next" rel="next" title="認識設計模式，提升你程式的可利用性">認識設計模式，提升你程式的可利用性<i class="fas fa-angle-right fa-fw"></i></a></div>
+</div>
+<br>
+        <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "arthur-blog-1" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+
+
+    </article></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2021</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{}};</script></div>
+</body>
+
+</html>

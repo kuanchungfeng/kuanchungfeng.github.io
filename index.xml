@@ -29,5 +29,11 @@
     <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
                     <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid>
     <description><![CDATA[設計模式是什麼? 設計模式(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計]]></description>
+</item><item>
+    <title>深入淺出JasperReports</title>
+    <link>https://kuanchungfeng.github.io/posts/jasper-report/</link>
+    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
+                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/jasper-report/</guid>
+    <description><![CDATA[簡介 為 Java 開發的開源程式庫 開發易擴充的動態報表 具有表格、圖表、地圖、子報表等功能 支援匯出多種格式(docx、xls、odt、ods、pdf、h]]></description>
 </item></channel>
 </rss>
