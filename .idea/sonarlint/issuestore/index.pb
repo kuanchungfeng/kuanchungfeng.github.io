@@ -27,14 +27,10 @@ U
 %posts/design-pattern-guide/index.html,4\0\40665076025ab28cb73b01ff08d8ccdc9de3c876
 ^
 .posts/design-pattern-learning-guide/index.html,e\d\ed3ca62914b406d835022c681ecc0da3787e1f83
-H
-posts/factory/index.html,4\4\445fa58a6334ddb92c57b1c4342227ed641c84e3
 I
 posts/factory2/index.html,d\8\d8c8cd0aea433c79ad44150a0ea0dfffdc704a4d
 N
 posts/jasper-report/index.html,c\3\c38a21a7254eb669a53cfe6283bf79f64f4e8722
-@
-posts/index.html,d\2\d2e7d7921cc398d87c1ac8fd4030e9fe0b3db991
 ?
 posts/index.xml,c\e\ce5f7f3891b02b7e3eb89e182aae9849c6d25033
 B
@@ -59,8 +55,3 @@ L
 tags/index.xml,6\f\6feba3fdd691bb1f481442a2c7cb1ade59ae4ed4
 8
 404.html,1\2\12bf52c5b60772bbf201ffb05d6bb178c1bf9a28
-:
-
-index.html,f\6\f6013a00b362253c64368d6eebc50ea2131754e2
-9
-	index.xml,b\d\bd2f281bc90df5c29cbb81713beeb3cc14d66c52
