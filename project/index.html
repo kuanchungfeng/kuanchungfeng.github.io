@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noodp" />
+    <title class="pjax-title"> - Arthur&#39;s Blog</title><meta name="Description" content=""><meta property="og:title" content="" />
+<meta property="og:description" content="1. 電商網站(Mobile Site)   網址：Newegg
+  使用技術：React &#43; TypeScript &#43; Mobx
+  參與項目：
+   A/B Testing 商品推薦    產品明細頁面-QRCode顯示    商品搜尋引擎體驗優化    使用者瀏覽商品行為分析    最低價格標籤顯示    消費者商品回饋訊息系統      2. OLTP系統   使用技術：Angular &#43; TypeScript &#43; Echarts &#43; WebRTC
+  參與項目：
+   首頁儀表板    伺服器監控系統    網頁掃描qrcode簽到系統        3." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://kuanchungfeng.github.io/project/" /><meta property="article:section" content="" />
+
+
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content=""/>
+<meta name="twitter:description" content="1. 電商網站(Mobile Site)   網址：Newegg
+  使用技術：React &#43; TypeScript &#43; Mobx
+  參與項目：
+   A/B Testing 商品推薦    產品明細頁面-QRCode顯示    商品搜尋引擎體驗優化    使用者瀏覽商品行為分析    最低價格標籤顯示    消費者商品回饋訊息系統      2. OLTP系統   使用技術：Angular &#43; TypeScript &#43; Echarts &#43; WebRTC
+  參與項目：
+   首頁儀表板    伺服器監控系統    網頁掃描qrcode簽到系統        3."/>
+<meta name="application-name" content="Arthur&#39;s Blog">
+<meta name="apple-mobile-web-app-title" content="Arthur&#39;s Blog">
+
+<meta name="theme-color" content="#ffffff"><link rel="shortcut icon" type="image/x-icon" href="/favicon.ico" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="canonical" href="https://kuanchungfeng.github.io/project/" /><link rel="next" href="https://kuanchungfeng.github.io/java-course-web-certificate/" /><link rel="stylesheet" href="/lib/normalize/normalize.min.css"><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/fontawesome-free/all.min.css">
+    <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" as="style" onload="this.onload=null;this.rel='stylesheet'" href="/lib/animate/animate.min.css">
+    <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "",
+        "inLanguage": "zh-TW",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/kuanchungfeng.github.io\/project\/"
+        },"genre": "page","wordcount":  46 ,
+        "url": "https:\/\/kuanchungfeng.github.io\/project\/","publisher": {
+            "@type": "Organization",
+            "name": ""},"description": ""
+    }
+    </script>
+<script type="application/javascript">
+var doNotTrack = false;
+if (!doNotTrack) {
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+	ga('create', 'UA-207691705-1', 'auto');
+	
+	ga('send', 'pageview');
+}
+</script>
+</head>
+
+<body header-desktop="" header-mobile=""><script type="text/javascript">
+        function setTheme(theme) {document.body.setAttribute('theme', theme);}
+        function saveTheme(theme) {window.localStorage && localStorage.setItem('theme', theme);}
+        function getMeta(metaName) {const metas = document.getElementsByTagName('meta'); for (let i = 0; i < metas.length; i++) if (metas[i].getAttribute('name') === metaName) return metas[i]; return '';}
+        if (window.localStorage && localStorage.getItem('theme')) {let theme = localStorage.getItem('theme');theme === 'light' || theme === 'dark' || theme === 'black' ? setTheme(theme) : (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light')); } else { if ('' === 'light' || '' === 'dark' || '' === 'black') setTheme(''), saveTheme(''); else saveTheme('auto'), window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? setTheme('dark') : setTheme('light');}
+        let themeColorMeta = getMeta('theme-color');
+        if (document.body.getAttribute('theme') != 'light') themeColorMeta.content = '#000000';
+    </script>
+    <div id="back-to-top"></div>
+    <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/posts/"> 文章 </a><a class="menu-item" href="/tags/"> 標籤 </a><a class="menu-item" href="/categories/"> 分類 </a><a class="menu-item" href="/authors/"> 作者 </a><a class="menu-item" href="/about/"> 經驗 </a><a class="menu-item active" href="/project/"> 作品 </a><span class="menu-item delimiter"></span><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                    <i class="fas fa-adjust fa-fw"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Arthur&#39;s Blog">Arthur&#39;s Blog</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><a class="menu-item" href="/posts/" title="">文章</a><a class="menu-item" href="/tags/" title="">標籤</a><a class="menu-item" href="/categories/" title="">分類</a><a class="menu-item" href="/authors/" title="">作者</a><a class="menu-item" href="/about/" title="">經驗</a><a class="menu-item" href="/project/" title="">作品</a><a href="#" onclick="return false;" class="menu-item theme-switch" title="">
+                <i class="fas fa-adjust fa-fw"></i>
+            </a></div>
+    </div>
+</header>
+<div class="search-dropdown desktop">
+    <div id="search-dropdown-desktop"></div>
+</div>
+<div class="search-dropdown mobile">
+    <div id="search-dropdown-mobile"></div>
+</div>
+<main class="main">
+            <div class="container"><div class="page single special"><h1 class="single-title animate__animated animate__pulse animate__faster"></h1><div class="content" id="content">
+<div class="sect1">
+<h2 id="_電商網站mobile_site"><a class="anchor" href="#_電商網站mobile_site"></a><a class="link" href="#_電商網站mobile_site">1. 電商網站(Mobile Site)</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>網址：<a href="https://www.newegg.com/" target="_blank" rel="noopener">Newegg</a></p>
+</li>
+<li>
+<p>使用技術：React + TypeScript + Mobx</p>
+</li>
+<li>
+<p>參與項目：</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_ab_testing_商品推薦"><a class="anchor" href="#_ab_testing_商品推薦"></a><a class="link" href="#_ab_testing_商品推薦">A/B Testing 商品推薦</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/trending.jpg" alt="商品推薦"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_產品明細頁面_qrcode顯示"><a class="anchor" href="#_產品明細頁面_qrcode顯示"></a><a class="link" href="#_產品明細頁面_qrcode顯示">產品明細頁面-QRCode顯示</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/pdp.jpg" alt="QRCode顯示"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_商品搜尋引擎體驗優化"><a class="anchor" href="#_商品搜尋引擎體驗優化"></a><a class="link" href="#_商品搜尋引擎體驗優化">商品搜尋引擎體驗優化</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/search-engine.jpg" alt="商品搜尋引擎體驗優化"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_使用者瀏覽商品行為分析"><a class="anchor" href="#_使用者瀏覽商品行為分析"></a><a class="link" href="#_使用者瀏覽商品行為分析">使用者瀏覽商品行為分析</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/user-behavior.jpg" alt="使用者瀏覽商品行為分析"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_最低價格標籤顯示"><a class="anchor" href="#_最低價格標籤顯示"></a><a class="link" href="#_最低價格標籤顯示">最低價格標籤顯示</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/lowest-price.jpg" alt="最低價格標籤顯示"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_消費者商品回饋訊息系統"><a class="anchor" href="#_消費者商品回饋訊息系統"></a><a class="link" href="#_消費者商品回饋訊息系統">消費者商品回饋訊息系統</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/seller-message.jpg" alt="消費者商品回饋訊息系統"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_oltp系統"><a class="anchor" href="#_oltp系統"></a><a class="link" href="#_oltp系統">2. OLTP系統</a></h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>使用技術：Angular + TypeScript + Echarts + WebRTC</p>
+</li>
+<li>
+<p>參與項目：</p>
+</li>
+</ul>
+</div>
+<div class="sect2">
+<h3 id="_首頁儀表板"><a class="anchor" href="#_首頁儀表板"></a><a class="link" href="#_首頁儀表板">首頁儀表板</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/dashboard.jpg" alt="首頁儀表板"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_伺服器監控系統"><a class="anchor" href="#_伺服器監控系統"></a><a class="link" href="#_伺服器監控系統">伺服器監控系統</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/server.jpg" alt="伺服器監控系統"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_網頁掃描qrcode簽到系統"><a class="anchor" href="#_網頁掃描qrcode簽到系統"></a><a class="link" href="#_網頁掃描qrcode簽到系統">網頁掃描qrcode簽到系統</a></h3>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/qrcode.png" alt="顯示QRCode"/>
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/qrcode2.png" alt="網頁掃描qrcode簽到系統"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_其他作品"><a class="anchor" href="#_其他作品"></a><a class="link" href="#_其他作品">3. 其他作品</a></h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="_美食機器人app"><a class="anchor" href="#_美食機器人app"></a><a class="link" href="#_美食機器人app"></a><a href="https://www.cakeresume.com/portfolios/app-e6011e" target="_blank" rel="noopener">美食機器人APP</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>使用技術：Android + Java</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/food.jpg" alt="美食機器人APP"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_個人部落格"><a class="anchor" href="#_個人部落格"></a><a class="link" href="#_個人部落格"></a><a href="https://kuanchungfeng.github.io/" target="_blank" rel="noopener">個人部落格</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>使用技術：hugo + Asciidoc + markdown</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/blog.jpg" alt="個人部落格"/>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_line_bot解夢機器人"><a class="anchor" href="#_line_bot解夢機器人"></a><a class="link" href="#_line_bot解夢機器人"></a><a href="https://www.cakeresume.com/portfolios/9b2c24" target="_blank" rel="noopener">Line Bot解夢機器人</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>使用技術：python+heroku+linebot</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="/images/project/dream.jpg" alt="解夢機器人"/>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div></div></div>
+        </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line">
+                </div><div class="footer-line"><i class="far fa-copyright fa-fw"></i><span itemprop="copyrightYear">2022</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank" rel="noopener noreferrer"></a></span></div>
+        </div></footer></div>
+
+    <div id="fixed-buttons"><a href="#back-to-top" id="back-to-top-button" class="fixed-button" title="">
+            <i class="fas fa-arrow-up fa-fw"></i>
+        </a><a href="#" id="view-comments" class="fixed-button" title="">
+            <i class="fas fa-comment fa-fw"></i>
+        </a>
+    </div><div class="assets"><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/topbar/topbar.min.js"></script><script type="text/javascript" src="/lib/pjax/pjax.min.js"></script><script type="text/javascript" src="/js/theme.min.js"></script></div>
+
+<div class="pjax-assets"><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"","maxShownLines":10},"comment":{}};</script></div>
+</body>
+
+</html>
