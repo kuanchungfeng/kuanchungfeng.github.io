@@ -1,20 +1,20 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>Categories - category - Arthur&#39;s Blog</title>
+        <title>Categories - 分類 - Arthur&#39;s Blog</title>
         <link>https://kuanchungfeng.github.io/categories/</link>
-        <description>Categories - category - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/" rel="self" type="application/rss+xml" /><item>
-    <title>Design Pattern</title>
-    <link>https://kuanchungfeng.github.io/categories/design-pattern/</link>
+        <description>Categories - 分類 - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/" rel="self" type="application/rss+xml" /><item>
+    <title>DesignPattern</title>
+    <link>https://kuanchungfeng.github.io/categories/designpattern/</link>
     <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-        <name></name>
-    </author><guid>https://kuanchungfeng.github.io/categories/design-pattern/</guid>
+        <name>作者</name>
+    </author><guid>https://kuanchungfeng.github.io/categories/designpattern/</guid>
     <description><![CDATA[]]></description>
 </item><item>
     <title>JasperReports</title>
     <link>https://kuanchungfeng.github.io/categories/jasperreports/</link>
     <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
-        <name></name>
+        <name>作者</name>
     </author><guid>https://kuanchungfeng.github.io/categories/jasperreports/</guid>
     <description><![CDATA[]]></description>
 </item></channel>

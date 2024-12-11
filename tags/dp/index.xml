@@ -1,31 +1,62 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>DP - tag - Arthur&#39;s Blog</title>
+        <title>DP - 標籤 - Arthur&#39;s Blog</title>
         <link>https://kuanchungfeng.github.io/tags/dp/</link>
-        <description>DP - tag - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
+        <description>DP - 標籤 - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
     <title>用烤肉來看工廠模式(下)</title>
     <link>https://kuanchungfeng.github.io/posts/factory2/</link>
     <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid>
-    <description><![CDATA[上一篇看完了情境，這一篇來說工廠模式的五大成分： 目的 時機 結構 角色 效果 簡單工廠模式 目的 利用傳入一個參數來取得不同的類別物件 時機 當使用者只想要取]]></description>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid>
+    <description><![CDATA[<div class="paragraph">
+<p>上一篇看完了情境，這一篇來說工廠模式的五大成分：</p>
+</div>]]></description>
 </item><item>
     <title>用烤肉來看工廠模式(上)</title>
     <link>https://kuanchungfeng.github.io/posts/factory/</link>
     <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/factory/</guid>
-    <description><![CDATA[工廠模式三大類 簡單工廠模式(Simple Factory) 工廠方法模式(Factory Method) 抽象工廠模式(Abstract Factory) 在認識三大工廠之前，先來看看以下情境]]></description>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/posts/factory/</guid>
+    <description><![CDATA[<div class="sect1">
+<h2 id="_工廠模式三大類"><a class="anchor" href="#_工廠模式三大類"></a>工廠模式三大類</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>簡單工廠模式(Simple Factory)</p>
+</li>
+<li>
+<p>工廠方法模式(Factory Method)</p>
+</li>
+<li>
+<p>抽象工廠模式(Abstract Factory)</p>
+</li>
+</ol>
+</div>]]></description>
 </item><item>
     <title>設計模式學習地圖</title>
     <link>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</link>
     <pubDate>Tue, 07 Sep 2021 22:53:34 &#43;0800</pubDate><author>
-                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid>
-    <description><![CDATA[前言 學習設計模式之前，最好對OO(物件導向)相關知識有一定的了解，這樣可以快速了解每個設計模式的運作機制，下圖為設計模式背景知識地圖： 物件導]]></description>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid>
+    <description><![CDATA[<div class="sect1">
+<h2 id="_前言">前言</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>學習設計模式之前，最好對<strong>OO(物件導向)</strong>相關知識有一定的了解，這樣可以快速了解每個設計模式的運作機制，下圖為設計模式背景知識地圖：</p>
+</div>]]></description>
 </item><item>
     <title>認識設計模式，提升你程式的可利用性</title>
     <link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link>
     <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
-                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid>
-    <description><![CDATA[設計模式是什麼? 設計模式(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計]]></description>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid>
+    <description><![CDATA[<div class="sect1">
+<h2 id="_設計模式是什麼">設計模式是什麼?</h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p><strong>設計模式</strong>(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計經驗總結。</p>
+</div>]]></description>
 </item></channel>
 </rss>

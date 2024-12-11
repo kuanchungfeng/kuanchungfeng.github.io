@@ -1,0 +1,35 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tags - Tag - Arthur&#39;s Blog</title>
+        <link>https://kuanchungfeng.github.io/en/tags/</link>
+        <description>Tags - Tag - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/" rel="self" type="application/rss+xml" /><item>
+    <title>DP</title>
+    <link>https://kuanchungfeng.github.io/en/tags/dp/</link>
+    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>https://kuanchungfeng.github.io/en/tags/dp/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Factory Pattern</title>
+    <link>https://kuanchungfeng.github.io/en/tags/factory-pattern/</link>
+    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>https://kuanchungfeng.github.io/en/tags/factory-pattern/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>JasperReports</title>
+    <link>https://kuanchungfeng.github.io/en/tags/jasperreports/</link>
+    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>https://kuanchungfeng.github.io/en/tags/jasperreports/</guid>
+    <description><![CDATA[]]></description>
+</item><item>
+    <title>Report Design</title>
+    <link>https://kuanchungfeng.github.io/en/tags/report-design/</link>
+    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
+        <name>Author</name>
+    </author><guid>https://kuanchungfeng.github.io/en/tags/report-design/</guid>
+    <description><![CDATA[]]></description>
+</item></channel>
+</rss>

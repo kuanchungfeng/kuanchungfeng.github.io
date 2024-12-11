@@ -1,0 +1,38 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Factory Pattern - Tag - Arthur&#39;s Blog</title>
+        <link>https://kuanchungfeng.github.io/en/tags/factory-pattern/</link>
+        <description>Factory Pattern - Tag - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/factory-pattern/" rel="self" type="application/rss+xml" /><item>
+    <title>Explaining Factory Patterns Through Barbecue (Part 2)</title>
+    <link>https://kuanchungfeng.github.io/en/posts/factory2/</link>
+    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/en/posts/factory2/</guid>
+    <description><![CDATA[<div class="paragraph">
+<p>In the previous article, we looked at the context. In this article, we will discuss the five main components of the factory pattern:</p>
+</div>]]></description>
+</item><item>
+    <title>Explaining Factory Patterns Through Barbecue (Part 1)</title>
+    <link>https://kuanchungfeng.github.io/en/posts/factory/</link>
+    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/en/posts/factory/</guid>
+    <description><![CDATA[<div class="sect1">
+<h2 id="_three_types_of_factory_patterns"><a class="anchor" href="#_three_types_of_factory_patterns"></a>Three Types of Factory Patterns</h2>
+<div class="sectionbody">
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Simple Factory Pattern</p>
+</li>
+<li>
+<p>Factory Method Pattern</p>
+</li>
+<li>
+<p>Abstract Factory Pattern</p>
+</li>
+</ol>
+</div>]]></description>
+</item></channel>
+</rss>

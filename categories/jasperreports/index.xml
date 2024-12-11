@@ -1,13 +1,35 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
-        <title>JasperReports - category - Arthur&#39;s Blog</title>
+        <title>JasperReports - 分類 - Arthur&#39;s Blog</title>
         <link>https://kuanchungfeng.github.io/categories/jasperreports/</link>
-        <description>JasperReports - category - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-TW</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/jasperreports/" rel="self" type="application/rss+xml" /><item>
+        <description>JasperReports - 分類 - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/jasperreports/" rel="self" type="application/rss+xml" /><item>
     <title>深入淺出JasperReports</title>
     <link>https://kuanchungfeng.github.io/posts/jasper-report/</link>
     <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name><uri>https://kuanchungfeng.github.io/authors/arthur</uri></author><guid>https://kuanchungfeng.github.io/posts/jasper-report/</guid>
-    <description><![CDATA[簡介 為 Java 開發的開源程式庫 開發易擴充的動態報表 具有表格、圖表、地圖、子報表等功能 支援匯出多種格式(docx、xls、odt、ods、pdf、h]]></description>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/posts/jasper-report/</guid>
+    <description><![CDATA[<div class="sect1">
+<h2 id="_簡介"><a class="anchor" href="#_簡介"></a>簡介</h2>
+<div class="sectionbody">
+<div class="ulist">
+<ul>
+<li>
+<p>為 Java 開發的<strong>開源</strong>程式庫</p>
+</li>
+<li>
+<p>開發易擴充的動態報表</p>
+</li>
+<li>
+<p>具有表格、圖表、地圖、子報表等功能</p>
+</li>
+<li>
+<p>支援匯出多種格式(docx、xls、odt、ods、pdf、html…​)</p>
+</li>
+<li>
+<p>可以通過多種方式提供數據(csv、JDBC、json…​)</p>
+</li>
+</ul>
+</div>]]></description>
 </item></channel>
 </rss>
