@@ -1,0 +1,14 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>GitHubCopilot - Tag - Arthur&#39;s Blog</title>
+        <link>https://kuanchungfeng.github.io/en/tags/githubcopilot/</link>
+        <description>GitHubCopilot - Tag - Arthur&#39;s Blog</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/githubcopilot/" rel="self" type="application/rss+xml" /><item>
+    <title>10 Useful GitHub Copilot Tricks</title>
+    <link>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</link>
+    <pubDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</pubDate><author>
+                    <name>Arthur</name>
+                </author><guid>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</guid>
+    <description><![CDATA[<p>Engineers often have endless tasks, so development efficiency is a major goal. GitHub Copilot, as an AI development tool, can do many things, including code generation and explanation, fixing specific errors, optimizing code, writing tests and documentation, and more.</p>]]></description>
+</item></channel>
+</rss>

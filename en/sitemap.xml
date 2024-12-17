@@ -2,7 +2,16 @@
     xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
     xmlns:xhtml="http://www.w3.org/1999/xhtml"
     ><url>
-            <loc>https://kuanchungfeng.github.io/en/authors/arthur/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
+            <loc>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/authors/arthur/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"
                         href="https://kuanchungfeng.github.io/authors/arthur/"
@@ -11,7 +20,7 @@
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/authors/arthur/"
                     /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
+            <loc>https://kuanchungfeng.github.io/en/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"
                         href="https://kuanchungfeng.github.io/"
@@ -20,7 +29,7 @@
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/"
                     /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/authors/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
+            <loc>https://kuanchungfeng.github.io/en/authors/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"
                         href="https://kuanchungfeng.github.io/authors/"
@@ -29,7 +38,7 @@
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/authors/"
                     /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/categories/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
+            <loc>https://kuanchungfeng.github.io/en/categories/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"
                         href="https://kuanchungfeng.github.io/categories/"
@@ -37,6 +46,51 @@
                     rel="alternate"
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/categories/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/tags/githubcopilot/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/tags/githubcopilot/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/tags/githubcopilot/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/categories/githubcopilot/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/categories/githubcopilot/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/categories/githubcopilot/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/posts/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/posts/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/posts/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/tags/productivity/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/tags/productivity/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/tags/productivity/"
+                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/tags/</loc><lastmod>2024-12-14T11:43:39&#43;08:00</lastmod><xhtml:link
+                        rel="alternate"
+                        hreflang="zh-tw"
+                        href="https://kuanchungfeng.github.io/tags/"
+                        /><xhtml:link
+                    rel="alternate"
+                    hreflang="en"
+                    href="https://kuanchungfeng.github.io/en/tags/"
                     /></url><url>
             <loc>https://kuanchungfeng.github.io/en/categories/designpattern/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
@@ -65,25 +119,7 @@
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/posts/factory2/"
                     /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/tags/factory-pattern/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod></url><url>
-            <loc>https://kuanchungfeng.github.io/en/posts/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://kuanchungfeng.github.io/posts/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://kuanchungfeng.github.io/en/posts/"
-                    /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/tags/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod><xhtml:link
-                        rel="alternate"
-                        hreflang="zh-tw"
-                        href="https://kuanchungfeng.github.io/tags/"
-                        /><xhtml:link
-                    rel="alternate"
-                    hreflang="en"
-                    href="https://kuanchungfeng.github.io/en/tags/"
-                    /></url><url>
+            <loc>https://kuanchungfeng.github.io/en/tags/factorypattern/</loc><lastmod>2021-09-14T21:31:47&#43;08:00</lastmod></url><url>
             <loc>https://kuanchungfeng.github.io/en/posts/factory/</loc><lastmod>2021-09-08T18:35:04&#43;08:00</lastmod><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"
@@ -138,7 +174,7 @@
                     hreflang="en"
                     href="https://kuanchungfeng.github.io/en/categories/jasperreports/"
                     /></url><url>
-            <loc>https://kuanchungfeng.github.io/en/tags/report-design/</loc><lastmod>2021-02-26T18:35:04&#43;08:00</lastmod></url><url>
+            <loc>https://kuanchungfeng.github.io/en/tags/reportdesign/</loc><lastmod>2021-02-26T18:35:04&#43;08:00</lastmod></url><url>
             <loc>https://kuanchungfeng.github.io/en/about/</loc><xhtml:link
                         rel="alternate"
                         hreflang="zh-tw"

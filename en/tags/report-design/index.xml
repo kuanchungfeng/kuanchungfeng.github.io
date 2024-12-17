@@ -1,14 +1,14 @@
 <rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
     <channel>
         <title>Report Design - Tag - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/en/tags/report-design/</link>
+        <link>http://localhost:1313/en/tags/report-design/</link>
         <description>Report Design - Tag - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/report-design/" rel="self" type="application/rss+xml" /><item>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="http://localhost:1313/en/tags/report-design/" rel="self" type="application/rss+xml" /><item>
     <title>Demystify JasperReports</title>
-    <link>https://kuanchungfeng.github.io/en/posts/jasper-report/</link>
+    <link>http://localhost:1313/en/posts/jasper-report/</link>
     <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
                     <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/jasper-report/</guid>
+                </author><guid>http://localhost:1313/en/posts/jasper-report/</guid>
     <description><![CDATA[<div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
