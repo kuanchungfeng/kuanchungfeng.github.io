@@ -1,0 +1,236 @@
+<!doctype html><html lang=zh-tw><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><meta name=robots content="noodp"><title>用烤肉來看工廠模式(上) - Arthur's Blog</title><meta name=Description content><meta property="og:url" content="https://kuanchungfeng.github.io/posts/factory/"><meta property="og:site_name" content="Arthur's Blog"><meta property="og:title" content="用烤肉來看工廠模式(上)"><meta property="og:description" content="工廠模式三大類 簡單工廠模式(Simple Factory)
+工廠方法模式(Factory Method)
+抽象工廠模式(Abstract Factory)"><meta property="og:locale" content="zh_tw"><meta property="og:type" content="article"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-09-08T18:35:04+08:00"><meta property="article:modified_time" content="2021-09-08T18:35:04+08:00"><meta property="article:tag" content="DP"><meta property="article:tag" content="工廠模式"><meta name=twitter:card content="summary"><meta name=twitter:title content="用烤肉來看工廠模式(上)"><meta name=twitter:description content="工廠模式三大類 簡單工廠模式(Simple Factory)
+工廠方法模式(Factory Method)
+抽象工廠模式(Abstract Factory)"><meta name=application-name content="Arthur's Blog"><meta name=apple-mobile-web-app-title content="Arthur's Blog"><meta name=theme-color content="#f8f8f8"><link rel="shortcut icon" type=image/x-icon href=/favicon.ico><link rel=icon type=image/png sizes=32x32 href=/favicon-32x32.png><link rel=icon type=image/png sizes=16x16 href=/favicon-16x16.png><link rel=apple-touch-icon sizes=180x180 href=/apple-touch-icon.png><link rel=canonical href=https://kuanchungfeng.github.io/posts/factory/><link rel=prev href=https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/><link rel=next href=https://kuanchungfeng.github.io/posts/factory2/><link rel=stylesheet href=/css/main.min.css><link rel=stylesheet href=/css/style.min.css><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"用烤肉來看工廠模式(上)","inLanguage":"zh-tw","mainEntityOfPage":{"@type":"WebPage","@id":"https://kuanchungfeng.github.io/posts/factory/"},"genre":"posts","keywords":["DP","工廠模式"],"wordcount":2647,"url":"https://kuanchungfeng.github.io/posts/factory/","datePublished":"2021-09-08T18:35:04+08:00","dateModified":"2021-09-08T18:35:04+08:00","publisher":{"@type":"Organization","name":"作者"},"author":[{"@type":"Person","name":"Arthur","url":"https://kuanchungfeng.github.io/authors/arthur"}],"description":""}</script></head><body data-instant-intensity=viewport><script type=text/javascript>function setTheme(e){document.body.setAttribute("theme",e),document.documentElement.className=e,document.documentElement.style.setProperty("color-scheme",e==="light"?"light":"dark"),e==="light"?document.documentElement.classList.remove("tw-dark"):document.documentElement.classList.add("tw-dark"),window.theme=e,window.isDark=window.theme!=="light"}function saveTheme(e){window.localStorage&&localStorage.setItem("theme",e)}function getMeta(e){const t=document.getElementsByTagName("meta");for(let n=0;n<t.length;n++)if(t[n].getAttribute("name")===e)return t[n];return""}if(window.localStorage&&localStorage.getItem("theme")){let e=localStorage.getItem("theme");e==="light"||e==="dark"?setTheme(e):setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light")}else""==="light"||""==="dark"?(setTheme(""),saveTheme("")):(saveTheme("auto"),setTheme(window.matchMedia&&window.matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"));let metaColors={light:"#f8f8f8",dark:"#161b22"};getMeta("theme-color").content=metaColors[document.body.getAttribute("theme")],window.switchThemeEventSet=new Set</script><div id=back-to-top></div><div id=mask></div><div class=wrapper><header class="desktop print:!tw-hidden" id=header-desktop><div class=header-wrapper><div class=header-title><a href=/ title="Arthur's Blog">Arthur's Blog</a></div><div class=menu><div class=menu-inner><a class=menu-item href=/posts/>文章 </a><a class=menu-item href=/tags/>標籤 </a><a class=menu-item href=/categories/>分類 </a><a class=menu-item href=/authors/>作者 </a><a class=menu-item href=/about/>經驗 </a><a class=menu-item href=/project/>作品 </a><span class="menu-item delimiter"></span><button class="menu-item language" aria-label=選擇語言>中文<svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+<select class=language-select aria-label=選擇語言 id=language-select-desktop onchange="location=this.value"><option value=/posts/factory/ selected>中文</option><option value=/en/posts/factory/>English</option></select>
+</button><button class="menu-item theme-switch" aria-label=切換主題>
+<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg></button></div></div></div></header><header class="mobile print:!tw-hidden" id=header-mobile><div class=header-container><div class=header-wrapper><div class=header-title><a href=/ title="Arthur's Blog">Arthur's Blog</a></div><div class=menu-toggle id=menu-toggle-mobile><span></span><span></span><span></span></div></div><div class=menu id=menu-mobile><a class=menu-item href=/posts/ title>文章</a><a class=menu-item href=/tags/ title>標籤</a><a class=menu-item href=/categories/ title>分類</a><a class=menu-item href=/authors/ title>作者</a><a class=menu-item href=/about/ title>經驗</a><a class=menu-item href=/project/ title>作品</a><button class="menu-item theme-switch tw-w-full" aria-label=切換主題>
+<svg class="icon" viewBox="0 0 512 512"><path d="M8 256c0 136.966 111.033 248 248 248s248-111.034 248-248S392.966 8 256 8 8 119.033 8 256zm248 184V72c101.705.0 184 82.311 184 184 0 101.705-82.311 184-184 184z"/></svg>
+</button><button class="menu-item tw-w-full" title>中文<svg class="icon" viewBox="0 0 320 512"><path d="M285.476 272.971 91.132 467.314c-9.373 9.373-24.569 9.373-33.941.0l-22.667-22.667c-9.357-9.357-9.375-24.522-.04-33.901L188.505 256 34.484 101.255c-9.335-9.379-9.317-24.544.04-33.901l22.667-22.667c9.373-9.373 24.569-9.373 33.941.0L285.475 239.03c9.373 9.372 9.373 24.568.001 33.941z"/></svg>
+<select class=language-select title onchange="location=this.value"><option value=/posts/factory/ selected>中文</option><option value=/en/posts/factory/>English</option></select></button></div></div></header><div class="search-dropdown desktop"><div id=search-dropdown-desktop></div></div><div class="search-dropdown mobile"><div id=search-dropdown-mobile></div></div><main class=main><div class=container><div class="toc print:!tw-hidden" id=toc-auto><h2 class=toc-title>目錄</h2><div class=toc-content id=toc-content-auto><nav id=TableOfContents><ul><li><a href=#_工廠模式三大類>工廠模式三大類</a></li><li><a href=#_情境>情境</a></li><li><a href=#_基本物件介紹>基本物件介紹</a><ul><li><a href=#_最重要的肉>最重要的肉</a></li><li><a href=#_牛肉>牛肉</a></li><li><a href=#_雞肉>雞肉</a></li><li><a href=#_豬肉>豬肉</a></li><li><a href=#_全聯>全聯</a></li></ul></li><li><a href=#_請支援收銀>請支援收銀</a></li><li><a href=#_簡單工廠模式>簡單工廠模式</a></li><li><a href=#_想吃烤鯖魚>想吃烤鯖魚</a></li><li><a href=#_工廠方法模式>工廠方法模式</a><ul><li><a href=#_牛肉工廠>牛肉工廠</a></li><li><a href=#_雞肉工廠>雞肉工廠</a></li><li><a href=#_豬肉工廠>豬肉工廠</a></li><li><a href=#_魚肉工廠>魚肉工廠</a></li></ul></li><li><a href=#_走私越南豬肉>走私越南豬肉</a></li><li><a href=#_抽象工廠模式>抽象工廠模式</a><ul><li><a href=#_國產肉工廠>國產肉工廠</a></li><li><a href=#_進口肉工廠>進口肉工廠</a></li><li><a href=#_烤肉包組合>烤肉包組合</a></li></ul></li></ul></nav></div></div><script>document.getElementsByTagName("main")[0].setAttribute("autoTOC","true")</script><article class="page single print:!tw-w-full print:!tw-max-w-none print:!tw-m-0 print:!tw-p-0"><h1 class=single-title data-pagefind-meta=date:2021-09-08 data-pagefind-body>用烤肉來看工廠模式(上)</h1><div class=post-meta><div class=post-meta-line><span class=post-author><span class=author><span class=screen-reader-text></span><a href=https://kuanchungfeng.github.io/authors/arthur>Arthur</a></span>
+</span>&nbsp;<span class=post-category></span>&nbsp;<span class=post-category>收錄於 <a href=/categories/designpattern/><svg class="icon" viewBox="0 0 512 512"><path d="M464 128H272l-54.63-54.63c-6-6-14.14-9.37-22.63-9.37H48C21.49 64 0 85.49.0 112v288c0 26.51 21.49 48 48 48h416c26.51.0 48-21.49 48-48V176c0-26.51-21.49-48-48-48zm0 272H48V112h140.12l54.63 54.63c6 6 14.14 9.37 22.63 9.37H464v224z"/></svg>DesignPattern</a></span></div><div class=post-meta-line><svg class="icon" viewBox="0 0 448 512"><path d="M148 288h-40c-6.6.0-12-5.4-12-12v-40c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v40c0 6.6-5.4 12-12 12zm108-12v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 96v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm-96 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm192 0v-40c0-6.6-5.4-12-12-12h-40c-6.6.0-12 5.4-12 12v40c0 6.6 5.4 12 12 12h40c6.6.0 12-5.4 12-12zm96-260v352c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h48V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h128V12c0-6.6 5.4-12 12-12h40c6.6.0 12 5.4 12 12v52h48c26.5.0 48 21.5 48 48zm-48 346V160H48v298c0 3.3 2.7 6 6 6h340c3.3.0 6-2.7 6-6z"/></svg>&nbsp;<time datetime=2021-09-08>2021-09-08</time>&nbsp;<svg class="icon" viewBox="0 0 576 512"><path d="M402.3 344.9l32-32c5-5 13.7-1.5 13.7 5.7V464c0 26.5-21.5 48-48 48H48c-26.5.0-48-21.5-48-48V112c0-26.5 21.5-48 48-48h273.5c7.1.0 10.7 8.6 5.7 13.7l-32 32c-1.5 1.5-3.5 2.3-5.7 2.3H48v352h352V350.5c0-2.1.8-4.1 2.3-5.6zm156.6-201.8L296.3 405.7l-90.4 10c-26.2 2.9-48.5-19.2-45.6-45.6l10-90.4L432.9 17.1c22.9-22.9 59.9-22.9 82.7.0l43.2 43.2c22.9 22.9 22.9 60 .1 82.8zM460.1 174 402 115.9 216.2 301.8l-7.3 65.3 65.3-7.3L460.1 174zm64.8-79.7-43.2-43.2c-4.1-4.1-10.8-4.1-14.8.0L436 82l58.1 58.1 30.9-30.9c4-4.2 4-10.8-.1-14.9z"/></svg>&nbsp;<time datetime=2021-09-08>2021-09-08</time>&nbsp;<svg class="icon" viewBox="0 0 512 512"><path d="M497.9 142.1l-46.1 46.1c-4.7 4.7-12.3 4.7-17 0l-111-111c-4.7-4.7-4.7-12.3.0-17l46.1-46.1c18.7-18.7 49.1-18.7 67.9.0l60.1 60.1c18.8 18.7 18.8 49.1.0 67.9zM284.2 99.8 21.6 362.4.4 483.9c-2.9 16.4 11.4 30.6 27.8 27.8l121.5-21.3 262.6-262.6c4.7-4.7 4.7-12.3.0-17l-111-111c-4.8-4.7-12.4-4.7-17.1.0zM124.1 339.9c-5.5-5.5-5.5-14.3.0-19.8l154-154c5.5-5.5 14.3-5.5 19.8.0s5.5 14.3.0 19.8l-154 154c-5.5 5.5-14.3 5.5-19.8.0zM88 424h48v36.3l-64.5 11.3-31.1-31.1L51.7 376H88v48z"/></svg>&nbsp;約 2647 字&nbsp;
+<svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119 8 8 119 8 256s111 248 248 248 248-111 248-248S393 8 256 8zm0 448c-110.5.0-2e2-89.5-2e2-2e2S145.5 56 256 56s2e2 89.5 2e2 2e2-89.5 2e2-2e2 2e2zm61.8-104.4-84.9-61.7c-3.1-2.3-4.9-5.9-4.9-9.7V116c0-6.6 5.4-12 12-12h32c6.6.0 12 5.4 12 12v141.7l66.8 48.6c5.4 3.9 6.5 11.4 2.6 16.8L334.6 349c-3.9 5.3-11.4 6.5-16.8 2.6z"/></svg>&nbsp;預計閱讀 12 分鐘&nbsp;</div></div><div class="details toc print:!tw-block" id=toc-static kept><div class="details-summary toc-title"><span>目錄</span>
+<span class=details-icon><svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></span></div><div class="details-content toc-content" id=toc-content-static><nav id=TableOfContents><ul><li><a href=#_工廠模式三大類>工廠模式三大類</a></li><li><a href=#_情境>情境</a></li><li><a href=#_基本物件介紹>基本物件介紹</a><ul><li><a href=#_最重要的肉>最重要的肉</a></li><li><a href=#_牛肉>牛肉</a></li><li><a href=#_雞肉>雞肉</a></li><li><a href=#_豬肉>豬肉</a></li><li><a href=#_全聯>全聯</a></li></ul></li><li><a href=#_請支援收銀>請支援收銀</a></li><li><a href=#_簡單工廠模式>簡單工廠模式</a></li><li><a href=#_想吃烤鯖魚>想吃烤鯖魚</a></li><li><a href=#_工廠方法模式>工廠方法模式</a><ul><li><a href=#_牛肉工廠>牛肉工廠</a></li><li><a href=#_雞肉工廠>雞肉工廠</a></li><li><a href=#_豬肉工廠>豬肉工廠</a></li><li><a href=#_魚肉工廠>魚肉工廠</a></li></ul></li><li><a href=#_走私越南豬肉>走私越南豬肉</a></li><li><a href=#_抽象工廠模式>抽象工廠模式</a><ul><li><a href=#_國產肉工廠>國產肉工廠</a></li><li><a href=#_進口肉工廠>進口肉工廠</a></li><li><a href=#_烤肉包組合>烤肉包組合</a></li></ul></li></ul></nav></div></div><div class=content id=content data-pagefind-body><div class=sect1><h2 id=_工廠模式三大類><a class=anchor href=#_工廠模式三大類></a>工廠模式三大類</h2><div class=sectionbody><div class="olist arabic"><ol class=arabic><li><p>簡單工廠模式(Simple Factory)</p></li><li><p>工廠方法模式(Factory Method)</p></li><li><p>抽象工廠模式(Abstract Factory)</p></li></ol></div><div class=paragraph><p>在認識三大工廠之前，先來看看以下情境。</p></div></div></div><div class=sect1><h2 id=_情境><a class=anchor href=#_情境></a>情境</h2><div class=sectionbody><div class=paragraph><p>中秋節快到了，又到了萬家烤肉萬家香的時候，這時候你決定到全聯買烤肉用品，你列了一張代購清單：</p></div><div class="ulist checklist"><ul class=checklist><li><p><i class="fa fa-square-o"></i> 烤肉架</p></li><li><p><i class="fa fa-square-o"></i> 木炭</p></li><li><p><i class="fa fa-square-o"></i> 牛肉</p></li><li><p><i class="fa fa-square-o"></i> 豬肉</p></li><li><p><i class="fa fa-square-o"></i> 雞肉</p></li></ul></div></div></div><div class=sect1><h2 id=_基本物件介紹><a class=anchor href=#_基本物件介紹></a>基本物件介紹</h2><div class=sectionbody><div class=sect2><h3 id=_最重要的肉><a class=anchor href=#_最重要的肉></a>最重要的肉</h3><div class=listingblock><div class=content><pre>public abstract class Meat {
+
+    private String name;
+
+    private int oz;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getOz() {
+        return oz;
+    }
+
+    public void setOz(int oz) {
+        this.oz = oz;
+    }
+
+    public Meat(String name) {
+        this.name = name;
+    }
+
+    public Meat(){
+
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_牛肉><a class=anchor href=#_牛肉></a>牛肉</h3><div class=listingblock><div class=content><pre>public class Beef extends Meat{
+
+    public Beef(String name) {
+        super(name);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_雞肉><a class=anchor href=#_雞肉></a>雞肉</h3><div class=listingblock><div class=content><pre>public class Chicken extends Meat{
+
+    public Chicken(String name) {
+        super(name);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_豬肉><a class=anchor href=#_豬肉></a>豬肉</h3><div class=listingblock><div class=content><pre>public class Pork extends Meat{
+
+    public Pork(String name) {
+        super(name);
+    }
+}</pre></div></div><div class=paragraph><p>你抱著期待的心到全聯，準備大買特買，發現全聯有出烤肉組合包，立馬手刀購買</p></div></div><div class=sect2><h3 id=_全聯><a class=anchor href=#_全聯></a>全聯</h3><div class=listingblock><div class=content><pre>public class PXMarket {
+
+    // 烤肉組合包
+    public static void barbecueItemSet(){
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(orderBarbecue(&#34;牛肉&#34;).getName());
+        buy(orderBarbecue(&#34;豬肉&#34;).getName());
+        buy(orderBarbecue(&#34;雞肉&#34;).getName());
+
+    }
+
+    static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+
+    public static void buy(String item){
+        System.out.println(&#34;買到&#34;+item+&#34;了&#34;);
+    }
+}</pre></div></div><div class=paragraph><p>買完回家，開始烤肉</p></div><div class=listingblock><div class=content><pre> //程式進入點
+    public static void main(String[] args) {
+        PXMarket.barbecueItemSet();
+        System.out.println(&#34;回家開烤&#34;);
+    }</pre></div></div><div class=imageblock><div class=content><img src=/images/factory/first-barbecue.png alt=第一次烤肉結果 width=500></div><div class=title>Figure 1. 第一次烤肉結果</div></div></div></div></div><div class=sect1><h2 id=_請支援收銀><a class=anchor href=#_請支援收銀></a>請支援收銀</h2><div class=sectionbody><div class=paragraph><p>因為組合包很熱銷，客戶絡繹不絕的來買，全聯的廣播不斷出現：「請支援收銀」，全聯決定將點肉的業務外包出去。</p></div></div></div><div class=sect1><h2 id=_簡單工廠模式><a class=anchor href=#_簡單工廠模式></a>簡單工廠模式</h2><div class=sectionbody><div class=listingblock><div class=content><pre>public class SimpleMeatFactory {
+
+    public static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+}</pre></div></div><div class=paragraph><p>全聯的服務只剩單純的組合包功能，將點肉服務外包給簡單肉工廠。</p></div><div class=listingblock><div class=content><pre>public class PXMarket {
+
+    // 烤肉組合包
+    public static void barbecueItemSet(){
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(SimpleMeatFactory.orderBarbecue(&#34;牛肉&#34;).getName());
+        buy(SimpleMeatFactory.orderBarbecue(&#34;豬肉&#34;).getName());
+        buy(SimpleMeatFactory.orderBarbecue(&#34;雞肉&#34;).getName());
+    }
+
+    public static void buy(String item){
+        System.out.println(&#34;買到&#34;+item+&#34;了&#34;);
+    }
+}</pre></div></div><div class=paragraph><p>簡單工廠負責管理物件的創造，如果client端要取得物件，只要給簡單工廠正確的參數即可。</p></div></div></div><div class=sect1><h2 id=_想吃烤鯖魚><a class=anchor href=#_想吃烤鯖魚></a>想吃烤鯖魚</h2><div class=sectionbody><div class=paragraph><p>吃完了烤肉以後，突然想吃烤鯖魚，你又到全聯點肉，簡單肉工廠為了你加了魚肉到商品列。</p></div><div class=listingblock><div class=content><pre>public class Fish extends Meat{
+
+    public Fish(String name) {
+        super(name);
+    }
+}</pre></div></div><div class=paragraph><p>並將魚肉放到菜單上</p></div><div class=listingblock><div class=content><pre>public class SimpleMeatFactory {
+
+    public static Meat orderBarbecue(String meatType){
+        if(meatType.equals(&#34;牛肉&#34;)){
+            return new Beef(&#34;和牛&#34;);
+        }else if(meatType.equals(&#34;雞肉&#34;)){
+            return new Chicken(&#34;土雞&#34;);
+        }else if(meatType.equals(&#34;魚肉&#34;)){
+            return new Fish(&#34;鯖魚&#34;);
+        }else {
+            return new Pork(&#34;伊比利豬&#34;);
+        }
+    }
+}</pre></div></div><div class=paragraph><p>全聯新增賣魚服務</p></div><div class=listingblock><div class=content><pre>   public static void buyFish(){
+        buy(SimpleMeatFactory.orderBarbecue(&#34;魚肉&#34;).getName());
+    }</pre></div></div><div class=paragraph><p>買完魚開烤</p></div><div class=listingblock><div class=content><pre>    //程式進入點
+    public static void main(String[] args) {
+        PXMarket.buyFish();
+        System.out.println(&#34;回家開烤&#34;);
+    }</pre></div></div><div class=paragraph><p>全聯覺得這樣下去不行，每次有客人想要點不同種的肉，它們都要及時修改商品列和菜單，並且這樣違反了OCP法。</p></div></div></div><div class=sect1><h2 id=_工廠方法模式><a class=anchor href=#_工廠方法模式></a>工廠方法模式</h2><div class=sectionbody><div class=paragraph><p>全聯決定與各自的肉工廠合作，於是全聯訂了一個介面，讓想要合作的肉工廠來找它們簽約。</p></div><div class=listingblock><div class=content><pre>public interface MeatMethodFactory {
+
+    Meat orderMeat();
+
+}</pre></div></div><div class=paragraph><p>之前合作的肉工廠紛紛來簽約</p></div><div class=sect2><h3 id=_牛肉工廠><a class=anchor href=#_牛肉工廠></a>牛肉工廠</h3><div class=listingblock><div class=content><pre>public class BeefFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Beef(&#34;和牛&#34;);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_雞肉工廠><a class=anchor href=#_雞肉工廠></a>雞肉工廠</h3><div class=listingblock><div class=content><pre>public class ChickenFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Chicken(&#34;土雞&#34;);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_豬肉工廠><a class=anchor href=#_豬肉工廠></a>豬肉工廠</h3><div class=listingblock><div class=content><pre>public class PorkFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Pork(&#34;伊比利豬&#34;);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_魚肉工廠><a class=anchor href=#_魚肉工廠></a>魚肉工廠</h3><div class=listingblock><div class=content><pre>public class FishFactory implements MeatMethodFactory{
+
+    @Override
+    public Meat orderMeat() {
+        return new Fish(&#34;鯖魚&#34;);
+    }
+}</pre></div></div><div class=paragraph><p>簽約完以後，全聯準備了一台iphone，專門為了跟工廠叫肉。</p></div><div class=listingblock><div class=content><pre>    public static Meat callFactory(MeatMethodFactory factory){
+        return factory.orderMeat();
+    }</pre></div></div><div class=paragraph><p>之前的買魚服務，只要呼叫對應廠商就可以叫魚了。</p></div><div class=listingblock><div class=content><pre>    public static void buyFish(){
+        FishFactory fishFactory = new FishFactory();
+        buy(callFactory(fishFactory).getName());
+    }</pre></div></div><div class=paragraph><p><strong>工廠方法模式</strong>定義了一個建立物件的介面，但由子類決定要實例化的類別為何。工廠方法讓類別把 <strong>實例化</strong> 的動作推遲到了子類</p></div></div></div></div><div class=sect1><h2 id=_走私越南豬肉><a class=anchor href=#_走私越南豬肉></a>走私越南豬肉</h2><div class=sectionbody><div class=paragraph><p>近期國內查獲走私越南豬肉，全聯決定分成國產肉工廠和進口肉工廠，只是想到要重新跟肉工廠簽約，全聯就很頭大。</p></div></div></div><div class=sect1><h2 id=_抽象工廠模式><a class=anchor href=#_抽象工廠模式></a>抽象工廠模式</h2><div class=sectionbody><div class=paragraph><p>全聯後來決定分成國產肉工廠和進口肉工廠，每間肉工廠必須至少供應牛、雞、豬、魚，於是它們又訂了新的介面。</p></div><div class=listingblock><div class=content><pre>public interface AbstractFactory {
+
+    public Beef supplyBeef();
+
+    public Chicken supplyChicken();
+
+    public Pork supplyPork();
+
+    public Fish supplyFish();
+}</pre></div></div><div class=sect2><h3 id=_國產肉工廠><a class=anchor href=#_國產肉工廠></a>國產肉工廠</h3><div class=listingblock><div class=content><pre>public class DomesticFactory implements AbstractFactory{
+    @Override
+    public Beef supplyBeef() {
+        return new Beef(&#34;國產牛肉&#34;);
+    }
+
+    @Override
+    public Chicken supplyChicken() {
+        return new Chicken(&#34;國產雞肉&#34;);
+    }
+
+    @Override
+    public Pork supplyPork() {
+        return new Pork(&#34;國產豬肉&#34;);
+    }
+
+    @Override
+    public Fish supplyFish() {
+        return new Fish(&#34;國產鯖魚&#34;);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_進口肉工廠><a class=anchor href=#_進口肉工廠></a>進口肉工廠</h3><div class=listingblock><div class=content><pre>public class ImportFactory implements AbstractFactory{
+    @Override
+    public Beef supplyBeef() {
+        return new Beef(&#34;進口和牛&#34;);
+    }
+
+    @Override
+    public Chicken supplyChicken() {
+        return new Chicken(&#34;進口雞肉&#34;);
+    }
+
+    @Override
+    public Pork supplyPork() {
+        return new Pork(&#34;進口豬肉&#34;);
+    }
+
+    @Override
+    public Fish supplyFish() {
+        return new Fish(&#34;進口鯖魚&#34;);
+    }
+}</pre></div></div></div><div class=sect2><h3 id=_烤肉包組合><a class=anchor href=#_烤肉包組合></a>烤肉包組合</h3><div class=listingblock><div class=content><pre>    public static void barbecueItemSet(){
+        DomesticFactory domesticFactory = new DomesticFactory();
+        buy(&#34;烤肉架&#34;);
+        buy(&#34;木炭&#34;);
+        buy(domesticFactory.supplyBeef().getName());
+        buy(domesticFactory.supplyChicken().getName());
+        buy(domesticFactory.supplyPork().getName());
+
+    }</pre></div></div><div class=paragraph><p>耶!!吃到國產豬肉了，不用擔心吃到有病毒的烤肉了</p></div><div class=imageblock><div class=content><img src=/images/factory/last-barbecue.jpg alt=最後一次烤肉結果 width=500></div><div class=title>Figure 2. 最後一次烤肉結果</div></div><div class=paragraph><p><strong>抽象工廠模式</strong>定義一個創建 <strong>產品族</strong> 的介面，產品族裡面每個產品的具體類別由繼承抽象工廠的實體工廠決定。</p></div><div class=paragraph><p><a href=https://github.com/kuanchungfeng/factory target=_blank rel=noopener>gitHub程式碼</a></p></div></div></div></div></div><div class=post-footer id=post-footer><div class=post-info><div class=post-info-line><div class=post-info-mod><span>更新於 2021-09-08</span></div><div class=post-info-license></div></div><div class="post-info-line print:!tw-hidden"><div class=post-info-md></div><div class=post-info-share></div></div></div><div class=post-info-more><section class=post-tags><svg class="icon" viewBox="0 0 640 512"><path d="M497.941 225.941 286.059 14.059A48 48 0 00252.118.0H48C21.49.0.0 21.49.0 48v204.118a48 48 0 0014.059 33.941l211.882 211.882c18.744 18.745 49.136 18.746 67.882.0l204.118-204.118c18.745-18.745 18.745-49.137.0-67.882zM112 160c-26.51.0-48-21.49-48-48s21.49-48 48-48 48 21.49 48 48-21.49 48-48 48zm513.941 133.823L421.823 497.941c-18.745 18.745-49.137 18.745-67.882.0l-.36-.36L527.64 323.522c16.999-16.999 26.36-39.6 26.36-63.64s-9.362-46.641-26.36-63.64L331.397.0h48.721a48 48 0 0133.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137.0 67.882z"/></svg>&nbsp;<a href=/tags/dp/>DP</a>,&nbsp;<a href=/tags/%E5%B7%A5%E5%BB%A0%E6%A8%A1%E5%BC%8F/>工廠模式</a></section><section class=print:!tw-hidden><span><button class="tw-text-fgColor-link-muted hover:tw-text-fgColor-link-muted-hover" onclick=window.history.back()>返回</button></span>&nbsp;|&nbsp;<span><a href=/>主頁</a></span></section></div><div class="post-nav print:tw-hidden"><a href=/posts/design-pattern-learning-guide/ class=prev rel=prev title=設計模式學習地圖><svg class="icon" viewBox="0 0 256 512"><path d="M31.7 239l136-136c9.4-9.4 24.6-9.4 33.9.0l22.6 22.6c9.4 9.4 9.4 24.6.0 33.9L127.9 256l96.4 96.4c9.4 9.4 9.4 24.6.0 33.9L201.7 409c-9.4 9.4-24.6 9.4-33.9.0l-136-136c-9.5-9.4-9.5-24.6-.1-34z"/></svg>設計模式學習地圖</a>
+<a href=/posts/factory2/ class=next rel=next title=用烤肉來看工廠模式(下)>用烤肉來看工廠模式(下)<svg class="icon" viewBox="0 0 256 512"><path d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9.0l-22.6-22.6c-9.4-9.4-9.4-24.6.0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6.0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9.0l136 136c9.5 9.4 9.5 24.6.1 34z"/></svg></a></div></div></article></div></main><footer class=footer><div class=footer-container><div class=footer-line>&nbsp;|&nbsp;</div><div class=footer-line><svg class="icon" viewBox="0 0 512 512"><path d="M256 8C119.033 8 8 119.033 8 256s111.033 248 248 248 248-111.033 248-248S392.967 8 256 8zm0 448c-110.532.0-2e2-89.451-2e2-2e2.0-110.531 89.451-2e2 2e2-2e2 110.532.0 2e2 89.451 2e2 2e2.0 110.532-89.451 2e2-2e2 2e2zm107.351-101.064c-9.614 9.712-45.53 41.396-104.065 41.396-82.43.0-140.484-61.425-140.484-141.567.0-79.152 60.275-139.401 139.762-139.401 55.531.0 88.738 26.62 97.593 34.779a11.965 11.965.0 011.936 15.322l-18.155 28.113c-3.841 5.95-11.966 7.282-17.499 2.921-8.595-6.776-31.814-22.538-61.708-22.538-48.303.0-77.916 35.33-77.916 80.082.0 41.589 26.888 83.692 78.277 83.692 32.657.0 56.843-19.039 65.726-27.225 5.27-4.857 13.596-4.039 17.82 1.738l19.865 27.17a11.947 11.947.0 01-1.152 15.518z"/></svg>2025<span class=author>&nbsp;<a href=/ target=_blank rel="noopener noreferrer"></a></span></div><div class=footer-line></div><div class=footer-line></div></div></footer></div><div id=fixed-buttons class=print:!tw-hidden><a href=#back-to-top id=back-to-top-button class="fixed-button tw-transition-opacity tw-opacity-0" title=回到頂部><svg class="icon" viewBox="0 0 448 512"><path d="M34.9 289.5l-22.2-22.2c-9.4-9.4-9.4-24.6.0-33.9L207 39c9.4-9.4 24.6-9.4 33.9.0l194.3 194.3c9.4 9.4 9.4 24.6.0 33.9L413 289.4c-9.5 9.5-25 9.3-34.3-.4L264 168.6V456c0 13.3-10.7 24-24 24h-32c-13.3.0-24-10.7-24-24V168.6L69.2 289.1c-9.3 9.8-24.8 10-34.3.4z"/></svg></a></div><script>window.config={comment:{}}</script><script src=/js/theme.min.js defer></script><script type=speculationrules>
+        {
+          "prerender": [
+            {
+              "where": { "href_matches": "/*" },
+              "eagerness": "moderate"
+            }
+          ]
+        }
+    </script></body></html>
