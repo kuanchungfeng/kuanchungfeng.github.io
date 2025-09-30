@@ -1,62 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>DesignPattern - Category - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/en/categories/designpattern/</link>
-        <description>DesignPattern - Category - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/categories/designpattern/" rel="self" type="application/rss+xml" /><item>
-    <title>Explaining Factory Patterns Through Barbecue (Part 2)</title>
-    <link>https://kuanchungfeng.github.io/en/posts/factory2/</link>
-    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/factory2/</guid>
-    <description><![CDATA[<div class="paragraph">
-<p>In the previous article, we looked at the context. In this article, we will discuss the five main components of the factory pattern:</p>
-</div>]]></description>
-</item><item>
-    <title>Explaining Factory Patterns Through Barbecue (Part 1)</title>
-    <link>https://kuanchungfeng.github.io/en/posts/factory/</link>
-    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/factory/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_three_types_of_factory_patterns"><a class="anchor" href="#_three_types_of_factory_patterns"></a>Three Types of Factory Patterns</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>Simple Factory Pattern</p>
-</li>
-<li>
-<p>Factory Method Pattern</p>
-</li>
-<li>
-<p>Abstract Factory Pattern</p>
-</li>
-</ol>
-</div>]]></description>
-</item><item>
-    <title>Design Patterns Learning Map</title>
-    <link>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</link>
-    <pubDate>Tue, 07 Sep 2021 22:53:34 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_preface">Preface</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Before learning design patterns, it is best to have a certain understanding of <strong>OO (Object-Oriented)</strong> related knowledge, so that you can quickly understand the operation mechanism of each design pattern. The following diagram is a map of background knowledge for design patterns:</p>
-</div>]]></description>
-</item><item>
-    <title>Understand design patterns to enhance the reusability of your code</title>
-    <link>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</link>
-    <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_what_is_a_design_pattern">What is a Design Pattern?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>Design Pattern</strong> is a solution to a specific problem, a set of programming experiences summarized to solve recurring problems.</p>
-</div>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DesignPattern on Arthur's Blog</title><link>https://kuanchungfeng.github.io/en/categories/designpattern/</link><description>Recent content in DesignPattern on Arthur's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/categories/designpattern/index.xml" rel="self" type="application/rss+xml"/><item><title>Explaining Factory Patterns Through Barbecue (Part 2)</title><link>https://kuanchungfeng.github.io/en/posts/factory2/</link><pubDate>Tue, 14 Sep 2021 21:31:47 +0800</pubDate><guid>https://kuanchungfeng.github.io/en/posts/factory2/</guid><description>&lt;div class="paragraph"&gt;
+&lt;p&gt;In the previous article, we looked at the context. In this article, we will discuss the five main components of the factory pattern:&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>Explaining Factory Patterns Through Barbecue (Part 1)</title><link>https://kuanchungfeng.github.io/en/posts/factory/</link><pubDate>Wed, 08 Sep 2021 18:35:04 +0800</pubDate><guid>https://kuanchungfeng.github.io/en/posts/factory/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_three_types_of_factory_patterns"&gt;&lt;a class="anchor" href="#_three_types_of_factory_patterns"&gt;&lt;/a&gt;Three Types of Factory Patterns&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="olist arabic"&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;
+&lt;p&gt;Simple Factory Pattern&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Factory Method Pattern&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Abstract Factory Pattern&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description></item><item><title>Design Patterns Learning Map</title><link>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</link><pubDate>Tue, 07 Sep 2021 22:53:34 +0800</pubDate><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_preface"&gt;Preface&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;Before learning design patterns, it is best to have a certain understanding of &lt;strong&gt;OO (Object-Oriented)&lt;/strong&gt; related knowledge, so that you can quickly understand the operation mechanism of each design pattern. The following diagram is a map of background knowledge for design patterns:&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>Understand design patterns to enhance the reusability of your code</title><link>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</link><pubDate>Mon, 06 Sep 2021 23:29:10 +0800</pubDate><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_what_is_a_design_pattern"&gt;What is a Design Pattern?&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;Design Pattern&lt;/strong&gt; is a solution to a specific problem, a set of programming experiences summarized to solve recurring problems.&lt;/p&gt;
+&lt;/div&gt;</description></item></channel></rss>

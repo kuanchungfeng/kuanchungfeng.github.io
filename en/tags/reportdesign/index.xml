@@ -1,35 +1,22 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>ReportDesign - Tag - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/en/tags/reportdesign/</link>
-        <description>ReportDesign - Tag - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/reportdesign/" rel="self" type="application/rss+xml" /><item>
-    <title>Demystify JasperReports</title>
-    <link>https://kuanchungfeng.github.io/en/posts/jasper-report/</link>
-    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/jasper-report/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
-<div class="sectionbody">
-<div class="ulist">
-<ul>
-<li>
-<p>An <strong>open-source</strong> library developed for Java</p>
-</li>
-<li>
-<p>Develop extensible dynamic reports</p>
-</li>
-<li>
-<p>Features include tables, charts, maps, sub-reports, etc.</p>
-</li>
-<li>
-<p>Supports exporting to various formats (docx, xls, odt, ods, pdf, html…​)</p>
-</li>
-<li>
-<p>Can provide data through various methods (csv, JDBC, json…​)</p>
-</li>
-</ul>
-</div>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>ReportDesign on Arthur's Blog</title><link>https://kuanchungfeng.github.io/en/tags/reportdesign/</link><description>Recent content in ReportDesign on Arthur's Blog</description><generator>Hugo</generator><language>en</language><lastBuildDate>Fri, 26 Feb 2021 18:35:04 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/tags/reportdesign/index.xml" rel="self" type="application/rss+xml"/><item><title>Demystify JasperReports</title><link>https://kuanchungfeng.github.io/en/posts/jasper-report/</link><pubDate>Fri, 26 Feb 2021 18:35:04 +0800</pubDate><guid>https://kuanchungfeng.github.io/en/posts/jasper-report/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_introduction"&gt;&lt;a class="anchor" href="#_introduction"&gt;&lt;/a&gt;Introduction&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="ulist"&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;An &lt;strong&gt;open-source&lt;/strong&gt; library developed for Java&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Develop extensible dynamic reports&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Features include tables, charts, maps, sub-reports, etc.&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Supports exporting to various formats (docx, xls, odt, ods, pdf, html…​)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Can provide data through various methods (csv, JDBC, json…​)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ul&gt;
+&lt;/div&gt;</description></item></channel></rss>

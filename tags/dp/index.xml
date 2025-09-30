@@ -1,62 +1,28 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>DP - 標籤 - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/tags/dp/</link>
-        <description>DP - 標籤 - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/" rel="self" type="application/rss+xml" /><item>
-    <title>用烤肉來看工廠模式(下)</title>
-    <link>https://kuanchungfeng.github.io/posts/factory2/</link>
-    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid>
-    <description><![CDATA[<div class="paragraph">
-<p>上一篇看完了情境，這一篇來說工廠模式的五大成分：</p>
-</div>]]></description>
-</item><item>
-    <title>用烤肉來看工廠模式(上)</title>
-    <link>https://kuanchungfeng.github.io/posts/factory/</link>
-    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/factory/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_工廠模式三大類"><a class="anchor" href="#_工廠模式三大類"></a>工廠模式三大類</h2>
-<div class="sectionbody">
-<div class="olist arabic">
-<ol class="arabic">
-<li>
-<p>簡單工廠模式(Simple Factory)</p>
-</li>
-<li>
-<p>工廠方法模式(Factory Method)</p>
-</li>
-<li>
-<p>抽象工廠模式(Abstract Factory)</p>
-</li>
-</ol>
-</div>]]></description>
-</item><item>
-    <title>設計模式學習地圖</title>
-    <link>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</link>
-    <pubDate>Tue, 07 Sep 2021 22:53:34 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_前言">前言</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>學習設計模式之前，最好對<strong>OO(物件導向)</strong>相關知識有一定的了解，這樣可以快速了解每個設計模式的運作機制，下圖為設計模式背景知識地圖：</p>
-</div>]]></description>
-</item><item>
-    <title>認識設計模式，提升你程式的可利用性</title>
-    <link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link>
-    <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid>
-    <description><![CDATA[<div class="sect1">
-<h2 id="_設計模式是什麼">設計模式是什麼?</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p><strong>設計模式</strong>(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計經驗總結。</p>
-</div>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>DP on Arthur's Blog</title><link>https://kuanchungfeng.github.io/tags/dp/</link><description>Recent content in DP on Arthur's Blog</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Tue, 14 Sep 2021 21:31:47 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/tags/dp/index.xml" rel="self" type="application/rss+xml"/><item><title>用烤肉來看工廠模式(下)</title><link>https://kuanchungfeng.github.io/posts/factory2/</link><pubDate>Tue, 14 Sep 2021 21:31:47 +0800</pubDate><guid>https://kuanchungfeng.github.io/posts/factory2/</guid><description>&lt;div class="paragraph"&gt;
+&lt;p&gt;上一篇看完了情境，這一篇來說工廠模式的五大成分：&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>用烤肉來看工廠模式(上)</title><link>https://kuanchungfeng.github.io/posts/factory/</link><pubDate>Wed, 08 Sep 2021 18:35:04 +0800</pubDate><guid>https://kuanchungfeng.github.io/posts/factory/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_工廠模式三大類"&gt;&lt;a class="anchor" href="#_工廠模式三大類"&gt;&lt;/a&gt;工廠模式三大類&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="olist arabic"&gt;
+&lt;ol class="arabic"&gt;
+&lt;li&gt;
+&lt;p&gt;簡單工廠模式(Simple Factory)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;工廠方法模式(Factory Method)&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;抽象工廠模式(Abstract Factory)&lt;/p&gt;
+&lt;/li&gt;
+&lt;/ol&gt;
+&lt;/div&gt;</description></item><item><title>設計模式學習地圖</title><link>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</link><pubDate>Tue, 07 Sep 2021 22:53:34 +0800</pubDate><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_前言"&gt;前言&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;學習設計模式之前，最好對&lt;strong&gt;OO(物件導向)&lt;/strong&gt;相關知識有一定的了解，這樣可以快速了解每個設計模式的運作機制，下圖為設計模式背景知識地圖：&lt;/p&gt;
+&lt;/div&gt;</description></item><item><title>認識設計模式，提升你程式的可利用性</title><link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link><pubDate>Mon, 06 Sep 2021 23:29:10 +0800</pubDate><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid><description>&lt;div class="sect1"&gt;
+&lt;h2 id="_設計模式是什麼"&gt;設計模式是什麼?&lt;/h2&gt;
+&lt;div class="sectionbody"&gt;
+&lt;div class="paragraph"&gt;
+&lt;p&gt;&lt;strong&gt;設計模式&lt;/strong&gt;(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計經驗總結。&lt;/p&gt;
+&lt;/div&gt;</description></item></channel></rss>

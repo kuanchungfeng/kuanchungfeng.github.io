@@ -1,7 +1,7 @@
 {
 	"version": 3,
 	"file": "style.min.css",
-	"sourceRoot": "/Users/kuanchungfeng/Project/arthur_blog",
+	"sourceRoot": "/home/runner/work/my-i18n-blog/my-i18n-blog",
 	"sources": [
 		"themes/DoIt/assets/css/style.scss",
 		"themes/DoIt/assets/css/_variables.scss",

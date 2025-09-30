@@ -1,31 +1,6 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>All Posts - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/en/posts/</link>
-        <description>All Posts | Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/posts/" rel="self" type="application/rss+xml" /><item>
-    <title>10 Useful GitHub Copilot Tricks</title>
-    <link>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</link>
-    <pubDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</guid>
-    <description><![CDATA[<p>Engineers often have endless tasks, so development efficiency is a major goal. GitHub Copilot, as an AI development tool, can do many things, including code generation and explanation, fixing specific errors, optimizing code, writing tests and documentation, and more.</p>]]></description>
-</item><item>
-    <title>Explaining Factory Patterns Through Barbecue (Part 2)</title>
-    <link>https://kuanchungfeng.github.io/en/posts/factory2/</link>
-    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/factory2/</guid>
-    <description><![CDATA[<div class="paragraph">
-<p>In the previous article, we looked at the context. In this article, we will discuss the five main components of the factory pattern:</p>
-</div>]]></description>
-</item><item>
-    <title>Explaining Factory Patterns Through Barbecue (Part 1)</title>
-    <link>https://kuanchungfeng.github.io/en/posts/factory/</link>
-    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/factory/</guid>
-    <description><![CDATA[<div class="sect1">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>All Posts - Arthur's Blog</title><link>https://kuanchungfeng.github.io/en/posts/</link><description>All Posts | Arthur's Blog</description><generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/en/posts/" rel="self" type="application/rss+xml"/><item><title>10 Useful GitHub Copilot Tricks</title><link>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</link><pubDate>Sat, 14 Dec 2024 11:43:39 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/github-copilot-ten-useful-trick/</guid><description>&lt;p>Engineers often have endless tasks, so development efficiency is a major goal. GitHub Copilot, as an AI development tool, can do many things, including code generation and explanation, fixing specific errors, optimizing code, writing tests and documentation, and more.&lt;/p></description></item><item><title>Explaining Factory Patterns Through Barbecue (Part 2)</title><link>https://kuanchungfeng.github.io/en/posts/factory2/</link><pubDate>Tue, 14 Sep 2021 21:31:47 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/factory2/</guid><description>&lt;div class="paragraph">
+&lt;p>In the previous article, we looked at the context. In this article, we will discuss the five main components of the factory pattern:&lt;/p>
+&lt;/div></description></item><item><title>Explaining Factory Patterns Through Barbecue (Part 1)</title><link>https://kuanchungfeng.github.io/en/posts/factory/</link><pubDate>Wed, 08 Sep 2021 18:35:04 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/factory/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_three_types_of_factory_patterns"><a class="anchor" href="#_three_types_of_factory_patterns"></a>Three Types of Factory Patterns</h2>
 <div class="sectionbody">
 <div class="olist arabic">
@@ -40,38 +15,17 @@
 <p>Abstract Factory Pattern</p>
 </li>
 </ol>
-</div>]]></description>
-</item><item>
-    <title>Design Patterns Learning Map</title>
-    <link>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</link>
-    <pubDate>Tue, 07 Sep 2021 22:53:34 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>Design Patterns Learning Map</title><link>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</link><pubDate>Tue, 07 Sep 2021 22:53:34 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-learning-guide/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_preface">Preface</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Before learning design patterns, it is best to have a certain understanding of <strong>OO (Object-Oriented)</strong> related knowledge, so that you can quickly understand the operation mechanism of each design pattern. The following diagram is a map of background knowledge for design patterns:</p>
-</div>]]></description>
-</item><item>
-    <title>Understand design patterns to enhance the reusability of your code</title>
-    <link>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</link>
-    <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>Understand design patterns to enhance the reusability of your code</title><link>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</link><pubDate>Mon, 06 Sep 2021 23:29:10 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/design-pattern-guide/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_what_is_a_design_pattern">What is a Design Pattern?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>Design Pattern</strong> is a solution to a specific problem, a set of programming experiences summarized to solve recurring problems.</p>
-</div>]]></description>
-</item><item>
-    <title>Demystify JasperReports</title>
-    <link>https://kuanchungfeng.github.io/en/posts/jasper-report/</link>
-    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/en/posts/jasper-report/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>Demystify JasperReports</title><link>https://kuanchungfeng.github.io/en/posts/jasper-report/</link><pubDate>Fri, 26 Feb 2021 18:35:04 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/en/posts/jasper-report/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a>Introduction</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -92,6 +46,4 @@
 <p>Can provide data through various methods (csv, JDBC, json…​)</p>
 </li>
 </ul>
-</div>]]></description>
-</item></channel>
-</rss>
+</div>]]></description></item></channel></rss>

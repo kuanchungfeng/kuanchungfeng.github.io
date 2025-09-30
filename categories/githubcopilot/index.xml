@@ -1,14 +1,1 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>GithubCopilot - 分類 - Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/categories/githubcopilot/</link>
-        <description>GithubCopilot - 分類 - Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/githubcopilot/" rel="self" type="application/rss+xml" /><item>
-    <title>10個實用的Github Copilot用法</title>
-    <link>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</link>
-    <pubDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</guid>
-    <description><![CDATA[<p>工程師的日常總是有永無止境的 task，因此開發效率是工程師的一大追求目標。Github Copilot 做為一個開發 AI 工具，能做的事很多，包含程式碼的生成與解釋、修正具體的錯誤、優化程式碼、撰寫測試和文件等等。</p>]]></description>
-</item></channel>
-</rss>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>GithubCopilot on Arthur's Blog</title><link>https://kuanchungfeng.github.io/categories/githubcopilot/</link><description>Recent content in GithubCopilot on Arthur's Blog</description><generator>Hugo</generator><language>zh-tw</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/categories/githubcopilot/index.xml" rel="self" type="application/rss+xml"/><item><title>10個實用的Github Copilot用法</title><link>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</link><pubDate>Sat, 14 Dec 2024 11:43:39 +0800</pubDate><guid>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</guid><description>&lt;p&gt;工程師的日常總是有永無止境的 task，因此開發效率是工程師的一大追求目標。Github Copilot 做為一個開發 AI 工具，能做的事很多，包含程式碼的生成與解釋、修正具體的錯誤、優化程式碼、撰寫測試和文件等等。&lt;/p&gt;</description></item></channel></rss>

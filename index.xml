@@ -1,33 +1,6 @@
-<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
-    <channel>
-        <title>Arthur&#39;s Blog</title>
-        <link>https://kuanchungfeng.github.io/</link>
-        <description>Arthur&#39;s Blog</description>
-        <generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</lastBuildDate>
-            <atom:link href="https://kuanchungfeng.github.io/index.xml" rel="self" type="application/rss+xml" />
-        <item>
-    <title>10個實用的Github Copilot用法</title>
-    <link>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</link>
-    <pubDate>Sat, 14 Dec 2024 11:43:39 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</guid>
-    <description><![CDATA[<p>工程師的日常總是有永無止境的 task，因此開發效率是工程師的一大追求目標。Github Copilot 做為一個開發 AI 工具，能做的事很多，包含程式碼的生成與解釋、修正具體的錯誤、優化程式碼、撰寫測試和文件等等。</p>]]></description>
-</item><item>
-    <title>用烤肉來看工廠模式(下)</title>
-    <link>https://kuanchungfeng.github.io/posts/factory2/</link>
-    <pubDate>Tue, 14 Sep 2021 21:31:47 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid>
-    <description><![CDATA[<div class="paragraph">
-<p>上一篇看完了情境，這一篇來說工廠模式的五大成分：</p>
-</div>]]></description>
-</item><item>
-    <title>用烤肉來看工廠模式(上)</title>
-    <link>https://kuanchungfeng.github.io/posts/factory/</link>
-    <pubDate>Wed, 08 Sep 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/factory/</guid>
-    <description><![CDATA[<div class="sect1">
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Arthur's Blog</title><link>https://kuanchungfeng.github.io/</link><description>Arthur's Blog</description><generator>Hugo -- gohugo.io</generator><language>zh-tw</language><lastBuildDate>Sat, 14 Dec 2024 11:43:39 +0800</lastBuildDate><atom:link href="https://kuanchungfeng.github.io/index.xml" rel="self" type="application/rss+xml"/><item><title>10個實用的Github Copilot用法</title><link>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</link><pubDate>Sat, 14 Dec 2024 11:43:39 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/github-copilot-ten-useful-trick/</guid><description>&lt;p>工程師的日常總是有永無止境的 task，因此開發效率是工程師的一大追求目標。Github Copilot 做為一個開發 AI 工具，能做的事很多，包含程式碼的生成與解釋、修正具體的錯誤、優化程式碼、撰寫測試和文件等等。&lt;/p></description></item><item><title>用烤肉來看工廠模式(下)</title><link>https://kuanchungfeng.github.io/posts/factory2/</link><pubDate>Tue, 14 Sep 2021 21:31:47 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/factory2/</guid><description>&lt;div class="paragraph">
+&lt;p>上一篇看完了情境，這一篇來說工廠模式的五大成分：&lt;/p>
+&lt;/div></description></item><item><title>用烤肉來看工廠模式(上)</title><link>https://kuanchungfeng.github.io/posts/factory/</link><pubDate>Wed, 08 Sep 2021 18:35:04 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/factory/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_工廠模式三大類"><a class="anchor" href="#_工廠模式三大類"></a>工廠模式三大類</h2>
 <div class="sectionbody">
 <div class="olist arabic">
@@ -42,38 +15,17 @@
 <p>抽象工廠模式(Abstract Factory)</p>
 </li>
 </ol>
-</div>]]></description>
-</item><item>
-    <title>設計模式學習地圖</title>
-    <link>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</link>
-    <pubDate>Tue, 07 Sep 2021 22:53:34 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>設計模式學習地圖</title><link>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</link><pubDate>Tue, 07 Sep 2021 22:53:34 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/design-pattern-learning-guide/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_前言">前言</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>學習設計模式之前，最好對<strong>OO(物件導向)</strong>相關知識有一定的了解，這樣可以快速了解每個設計模式的運作機制，下圖為設計模式背景知識地圖：</p>
-</div>]]></description>
-</item><item>
-    <title>認識設計模式，提升你程式的可利用性</title>
-    <link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link>
-    <pubDate>Mon, 06 Sep 2021 23:29:10 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>認識設計模式，提升你程式的可利用性</title><link>https://kuanchungfeng.github.io/posts/design-pattern-guide/</link><pubDate>Mon, 06 Sep 2021 23:29:10 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/design-pattern-guide/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_設計模式是什麼">設計模式是什麼?</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><strong>設計模式</strong>(Design Pattern)是一個為了解決特定問題的解決方案，是一套為了解決人類反覆遇到的問題，經過整理的程式設計經驗總結。</p>
-</div>]]></description>
-</item><item>
-    <title>深入淺出JasperReports</title>
-    <link>https://kuanchungfeng.github.io/posts/jasper-report/</link>
-    <pubDate>Fri, 26 Feb 2021 18:35:04 &#43;0800</pubDate><author>
-                    <name>Arthur</name>
-                </author><guid>https://kuanchungfeng.github.io/posts/jasper-report/</guid>
-    <description><![CDATA[<div class="sect1">
+</div>]]></description></item><item><title>深入淺出JasperReports</title><link>https://kuanchungfeng.github.io/posts/jasper-report/</link><pubDate>Fri, 26 Feb 2021 18:35:04 +0800</pubDate><author><name>Arthur</name></author><guid>https://kuanchungfeng.github.io/posts/jasper-report/</guid><description><![CDATA[<div class="sect1">
 <h2 id="_簡介"><a class="anchor" href="#_簡介"></a>簡介</h2>
 <div class="sectionbody">
 <div class="ulist">
@@ -94,6 +46,4 @@
 <p>可以通過多種方式提供數據(csv、JDBC、json…​)</p>
 </li>
 </ul>
-</div>]]></description>
-</item></channel>
-</rss>
+</div>]]></description></item></channel></rss>
